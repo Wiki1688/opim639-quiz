@@ -4,220 +4,692 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1E2761">
-<title>OPIM639 Quiz</title>
+<meta name="description" content="OPIM639 Exam Prep Quiz: practice MCQs and short questions for Prof Lim's Innovations & Operations of Intelligent Online Marketplaces.">
+<title>OPIM639 Exam Prep Quiz</title>
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231E2761'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>Q</text></svg>">
 <style>
-:root{--bg:#F4F6FA;--card:#FFFFFF;--ink:#1F2430;--muted:#5B6170;--line:#DDE1E8;--brand:#1E2761;--accent:#2E5BBA;
---ok:#1F8A70;--okbg:#E3F3EE;--bad:#B3261E;--badbg:#FCE8E6;--warnbg:#FFF4E0;--chip:#EEF1F8}
-@media (prefers-color-scheme:dark){:root{--bg:#12151C;--card:#1C212B;--ink:#E8EAF0;--muted:#A3A9B6;--line:#2E3442;--brand:#9DB4FF;--accent:#7FA2FF;
---ok:#5CC9A7;--okbg:#173A31;--bad:#FF8A80;--badbg:#3E1F1D;--warnbg:#3A3020;--chip:#262C39}}
+:root{--bg:#F3F5FB;--card:#FFFFFF;--ink:#1C2230;--muted:#5D6475;--line:#E1E5EE;--brand:#1E2761;--accent:#3D6BE0;--accent2:#7B5CFA;
+--ok:#16956F;--okbg:#E2F5EE;--bad:#C6372E;--badbg:#FCE9E7;--warn:#B76E00;--warnbg:#FFF4DF;--chip:#EEF1F8;--shadow:0 6px 24px rgba(30,39,97,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#10131B;--card:#1A1F2B;--ink:#E9ECF3;--muted:#A2A9B8;--line:#2B3241;--accent:#7FA2FF;--accent2:#A993FF;
+--ok:#4FD1A5;--okbg:#14352C;--bad:#FF8A80;--badbg:#3B1E1C;--warn:#F2B35B;--warnbg:#3A2E18;--chip:#252B39;--shadow:0 6px 24px rgba(0,0,0,.35)}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
-header{background:#1E2761;color:#fff;padding:14px 16px;position:sticky;top:0;z-index:5}
-header .row{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px}
-header h1{font-size:19px;margin:0;flex:1}
-header button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:10px;padding:8px 12px;font-size:15px}
-main{max-width:860px;margin:0 auto;padding:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
-h2{font-size:18px;margin:0 0 10px}
-.muted{color:var(--muted);font-size:15px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:15px;cursor:pointer;min-height:40px}
-.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.seg{display:flex;gap:8px;flex-wrap:wrap}
-.btn{border:0;border-radius:12px;padding:13px 18px;font-size:17px;font-weight:600;cursor:pointer;min-height:48px}
-.btn.primary{background:var(--accent);color:#fff}
-.btn.ghost{background:var(--chip);color:var(--ink);border:1px solid var(--line)}
-.btn:disabled{opacity:.45}
-.row2{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.row2 .btn{flex:1 1 140px}
-.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:13px 14px;margin:9px 0;font-size:17px;cursor:pointer;min-height:52px}
-.opt b{display:inline-block;width:26px;color:var(--muted)}
-.opt.sel{border-color:var(--accent)}
-.opt.right{border-color:var(--ok);background:var(--okbg)}
-.opt.wrong{border-color:var(--bad);background:var(--badbg)}
-.why{font-size:15px;color:var(--muted);margin:4px 0 0 26px}
-.fb{border-radius:12px;padding:12px 14px;margin-top:12px}
-.fb.ok{background:var(--okbg)} .fb.no{background:var(--badbg)}
-.meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-.tag{font-size:12.5px;border-radius:6px;padding:3px 8px;background:var(--chip);color:var(--muted)}
-.tag.must{background:var(--badbg);color:var(--bad)}
-.bar{height:8px;background:var(--chip);border-radius:99px;overflow:hidden;margin:6px 0 12px}
-.bar i{display:block;height:100%;background:var(--accent)}
-.qtext{font-size:18.5px;font-weight:600;margin:4px 0 6px}
-ul.tight{margin:6px 0 0 0;padding-left:22px} ul.tight li{margin:3px 0}
-.stat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.stat div{background:var(--chip);border-radius:12px;padding:10px 12px;font-size:14px}
-.stat b{display:block;font-size:20px}
-.big{font-size:44px;font-weight:800;color:var(--accent)}
-textarea{width:100%;min-height:110px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px;font:inherit}
-label.ck{display:flex;gap:10px;align-items:flex-start;margin:6px 0}
-label.ck input{width:22px;height:22px;margin-top:2px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+button{font:inherit;cursor:pointer;color:inherit}
+header{background:linear-gradient(120deg,#1E2761,#3B2C8F 60%,#5B3DB5);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header .row{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:12px 16px}
+header h1{font-size:18px;margin:0;flex:1;letter-spacing:.2px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header h1 small{opacity:.75;font-weight:500}
+.hbtn{background:rgba(255,255,255,.14);border:0;border-radius:10px;padding:7px 11px;font-size:14px;color:#fff;transition:background .2s}
+.hbtn:hover{background:rgba(255,255,255,.26)}
 .timer{font-variant-numeric:tabular-nums;font-weight:700}
-.rev{border-top:1px solid var(--line);padding:10px 0}
-select{font:inherit;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
-@media (max-width:520px){body{font-size:16px}.qtext{font-size:17.5px}.opt{font-size:16px}}
+nav.tabs{max-width:880px;margin:0 auto;display:flex;gap:4px;padding:0 10px 8px;overflow-x:auto;scrollbar-width:none}
+nav.tabs button{background:transparent;border:0;color:rgba(255,255,255,.75);padding:7px 12px;border-radius:999px;font-size:14.5px;white-space:nowrap;transition:all .2s}
+nav.tabs button.on{background:#fff;color:#1E2761;font-weight:700}
+main{max-width:880px;margin:0 auto;padding:16px 16px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:var(--shadow);animation:rise .35s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.96)}60%{transform:scale(1.03)}100%{transform:scale(1)}}
+@keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(61,107,224,.0)}50%{box-shadow:0 0 0 6px rgba(61,107,224,.18)}}
+h2{font-size:18px;margin:0 0 10px}
+h3{font-size:16px;margin:14px 0 8px}
+.muted{color:var(--muted);font-size:14.5px}
+.hero{background:linear-gradient(135deg,#3D6BE0,#7B5CFA);color:#fff;border:0}
+.hero h2{font-size:22px;margin-bottom:4px}
+.hero .muted{color:rgba(255,255,255,.85)}
+.count{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.count div{background:rgba(255,255,255,.16);border-radius:12px;padding:8px 12px;min-width:74px;text-align:center}
+.count b{display:block;font-size:24px;line-height:1.1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--chip);border-radius:999px;padding:8px 14px;font-size:15px;min-height:40px;transition:all .18s}
+.chip:hover{transform:translateY(-1px)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn{border:0;border-radius:14px;padding:13px 18px;font-size:16.5px;font-weight:650;min-height:50px;transition:transform .12s,box-shadow .2s,opacity .2s}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:linear-gradient(135deg,#3D6BE0,#6A55F2);color:#fff;box-shadow:0 6px 18px rgba(61,107,224,.35)}
+.btn.ghost{background:var(--chip);border:1px solid var(--line)}
+.btn.warn{background:var(--warnbg);color:var(--warn);border:1px solid transparent}
+.btn:disabled{opacity:.4;box-shadow:none}
+.row2{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.row2 .btn{flex:1 1 150px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.tcard{background:var(--chip);border-radius:14px;padding:12px;display:flex;gap:10px;align-items:center;border:1px solid transparent;transition:all .2s;text-align:left}
+.tcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ring{width:46px;height:46px;flex:none}
+.ring circle{fill:none;stroke-width:6}
+.ring .bgc{stroke:var(--line)} .ring .fg{stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.tcard b{display:block;font-size:14px}
+.tcard span{font-size:12.5px;color:var(--muted)}
+.qcard{animation:rise .3s ease both}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;align-items:center}
+.tag{font-size:12.5px;border-radius:7px;padding:3px 8px;background:var(--chip);color:var(--muted)}
+.tag.must{background:var(--badbg);color:var(--bad)} .tag.vis{background:#EFE9FF;color:#5B3DB5}
+@media (prefers-color-scheme:dark){.tag.vis{background:#2E2650;color:#C9B9FF}}
+.qtext{font-size:19px;font-weight:650;margin:6px 0 8px;line-height:1.45}
+.opt{display:flex;gap:10px;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:13px 14px;margin:9px 0;font-size:16.5px;min-height:54px;transition:border-color .15s,background .2s,transform .12s}
+.opt:hover:not(:disabled){border-color:var(--accent);transform:translateX(2px)}
+.opt .k{flex:none;width:28px;height:28px;border-radius:8px;background:var(--chip);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--muted)}
+.opt.sel{border-color:var(--accent);animation:glow 1.2s ease}
+.opt.sel .k{background:var(--accent);color:#fff}
+.opt.right{border-color:var(--ok);background:var(--okbg);animation:pop .35s ease}
+.opt.right .k{background:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--badbg);animation:shake .45s ease}
+.opt.wrong .k{background:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.why{font-size:14.5px;color:var(--muted);margin-top:4px}
+.fb{border-radius:14px;padding:13px 15px;margin-top:12px;animation:rise .3s ease both}
+.fb.ok{background:var(--okbg)} .fb.no{background:var(--badbg)} .fb.tip{background:var(--warnbg)}
+.fb .head{font-weight:750;font-size:17px}
+.bar{height:9px;background:var(--chip);border-radius:99px;overflow:hidden;margin:6px 0 12px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#3D6BE0,#7B5CFA);transition:width .4s ease}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.flag{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:14px;transition:all .2s}
+.flag.on{background:var(--warnbg);color:var(--warn);border-color:var(--warn)}
+.streak{font-weight:700;color:var(--warn)}
+.big{font-size:52px;font-weight:850;background:linear-gradient(135deg,#3D6BE0,#7B5CFA);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+textarea,input[type=text],select{width:100%;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 12px;font:inherit}
+select{width:auto}
+textarea{min-height:110px}
+label.ck{display:flex;gap:10px;align-items:flex-start;margin:7px 0}
+label.ck input{width:22px;height:22px;margin-top:2px;accent-color:var(--accent)}
+ul.tight{margin:6px 0 0;padding-left:22px} ul.tight li{margin:4px 0}
+.trap{border-left:4px solid var(--bad);background:var(--badbg);border-radius:10px;padding:9px 12px;margin:7px 0;font-size:15.5px}
+.tipcard{border-left:4px solid var(--warn);background:var(--warnbg);border-radius:10px;padding:10px 12px;margin:8px 0}
+.rev{border-top:1px solid var(--line);padding:12px 0}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(30px);background:#1E2761;color:#fff;padding:11px 18px;border-radius:12px;opacity:0;transition:all .3s;z-index:50;font-size:15px;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:40}
+.kbd{font-size:12px;color:var(--muted)}
+details summary{cursor:pointer;font-weight:650}
+#print{display:none}
+.actions{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.act{border:0;border-radius:16px;padding:14px;text-align:left;color:#fff;min-height:92px;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.act:hover{transform:translateY(-3px)} .act b{display:block;font-size:16px} .act span{font-size:13px;opacity:.9}
+.act .ic{font-size:24px;display:block;margin-bottom:4px}
+.cal{display:grid;grid-template-columns:repeat(14,1fr);gap:4px;margin-top:8px}
+.cal i{aspect-ratio:1;border-radius:4px;background:var(--chip);display:block}
+.cal i.l1{background:#B9CCF7}.cal i.l2{background:#7E9FF0}.cal i.l3{background:#3D6BE0}.cal i.today{outline:2px solid var(--warn)}
+.why-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.why-chips .chip{font-size:13.5px;min-height:34px;padding:6px 11px}
+.flip{perspective:1200px;margin:10px 0}
+.flip .inner{position:relative;min-height:240px;transition:transform .6s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;cursor:pointer}
+.flip.on .inner{transform:rotateY(180deg)}
+.flip .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-size:20px;font-weight:650;line-height:1.45}
+.flip .front{background:linear-gradient(135deg,#3D6BE0,#7B5CFA);color:#fff}
+.flip .back{background:var(--okbg);color:var(--ink);transform:rotateY(180deg);font-size:17.5px;font-weight:550}
+.flip .face small{font-size:13px;opacity:.8;font-weight:500;margin-top:12px}
+
+@media (max-width:520px){body{font-size:16px}.qtext{font-size:17.5px}.opt{font-size:15.5px}header h1 small{display:none}}
+@media print{
+ body{background:#fff;color:#000;font-size:11pt}
+ header,main,#fx,.toast{display:none!important}
+ #print{display:block}
+ #print h1{font-size:18pt;margin:0 0 4pt} #print h2{font-size:13pt;margin:14pt 0 6pt;border-bottom:2px solid #333;page-break-after:avoid}
+ .pq{page-break-inside:avoid;margin:0 0 10pt;padding-bottom:6pt;border-bottom:1px solid #ccc}
+ .pq .o{margin:1pt 0 1pt 14pt} .pq .a{margin-top:3pt;padding:4pt 6pt;background:#eef7f2;border-left:3px solid #16956F}
+ .pq .w{font-size:9.5pt;color:#444} .pq .t{font-size:9pt;color:#666}
+}
 </style>
 </head>
 <body>
-<header><div class="row"><h1>OPIM639 Quiz</h1><span id="hdr" class="timer"></span><button id="homeBtn" hidden>Home</button></div></header>
+<header>
+ <div class="row"><h1 id="brand">OPIM639 Exam Prep Quiz <small>· Prof Lim</small></h1><span id="hdr" class="timer"></span><button class="hbtn" id="who">👤</button></div>
+ <nav class="tabs" id="tabs">
+  <button data-t="home" class="on">🏠 Practice</button><button data-t="cards">🃏 Flashcards</button><button data-t="revise">📌 Revise</button><button data-t="traps">⚠️ Traps & tips</button><button data-t="print">🖨️ Print / export</button><button data-t="me">👤 Profile</button>
+ </nav>
+</header>
 <main id="app"><div class="card">Loading questions…</div></main>
+<div id="print"></div>
+<canvas id="fx"></canvas>
+<div class="toast" id="toast"></div>
 <script>
-const $ = s => document.querySelector(s);
-const store = {
-  get(k, d) { try { const v = localStorage.getItem("opim639_" + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
-  set(k, v) { try { localStorage.setItem("opim639_" + k, JSON.stringify(v)); } catch (e) {} }
-};
-let QB = null, S = null, timerId = null;
+"use strict";
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const L = ["A", "B", "C", "D"];
-const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-const prefs = Object.assign({ topics: null, type: "mcq", mode: "practice", random: false, shuffleOpts: false, must: false, diff: "all", examN: 20 }, store.get("prefs", {}));
+const pick = a => a[Math.floor(Math.random() * a.length)];
 
-fetch("questions.json").then(r => r.json()).then(d => { QB = d; if (!prefs.topics) prefs.topics = d.topics.map(t => t.id); home(); })
-  .catch(() => { $("#app").innerHTML = '<div class="card"><h2>Could not load questions.json</h2><p class="muted">Open this app through Vercel (or any web server). Browsers block loading files directly from your disk.</p></div>'; });
+/* ---------- storage: per device, per profile ---------- */
+const LS = {
+  raw(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  rawSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+let profile = LS.raw("opim639:current", null);
+const pk = k => `opim639:${profile || "guest"}:${k}`;
+const store = { get: (k, d) => LS.raw(pk(k), d), set: (k, v) => LS.rawSet(pk(k), v) };
+function profiles() { return LS.raw("opim639:profiles", []); }
+function setProfile(name) {
+  name = name.trim().slice(0, 30); if (!name) return;
+  const ps = profiles(); if (!ps.includes(name)) { ps.push(name); LS.rawSet("opim639:profiles", ps); }
+  profile = name; LS.rawSet("opim639:current", name); prefs = loadPrefs();
+  // migrate v1 progress once
+  const old = LS.raw("opim639_progress", null);
+  if (old && !store.get("progress", null)) { store.set("progress", Object.fromEntries(Object.entries(old).map(([k, v]) => [k, Object.assign({ wrongEver: v.last === false }, v)]))); }
+}
 
-function topicName(id) { return (QB.topics.find(t => t.id === id) || {}).name || id; }
-function progress() { return store.get("progress", {}); } // id -> {seen, correct, last}
-function wrongIds() { const p = progress(); return Object.keys(p).filter(k => p[k].last === false); }
+let QB = null, S = null, timerId = null, prefs = null, tab = "home";
+function loadPrefs() { const p = Object.assign({ topics: null, type: "mcq", mode: "practice", random: false, shuffleOpts: false, must: false, visual: false, diff: "all", examN: 20 }, store.get("prefs", {})); if (!p.topics && QB) p.topics = QB.topics.map(t => t.id); return p; }
+const savePrefs = () => store.set("prefs", prefs);
+const progress = () => store.get("progress", {});
+const flags = () => store.get("flags", {});
+function toggleFlag(id) { const f = flags(); if (f[id]) delete f[id]; else f[id] = Date.now(); store.set("flags", f); return !!f[id]; }
+function record(q, correct) {
+  const p = progress(); const r = p[q.id] || { seen: 0, correct: 0, wrongEver: false };
+  r.seen++; if (correct) r.correct++; else r.wrongEver = true; r.last = correct; r.t = Date.now(); p[q.id] = r; store.set("progress", p);
+  srsUpdate(q.id, correct, "srs");
+  const st = store.get("stats", { streak: 0, best: 0, answered: 0, days: {} });
+  st.answered++; st.streak = correct ? st.streak + 1 : 0; st.best = Math.max(st.best, st.streak);
+  const day = new Date().toISOString().slice(0, 10); st.days[day] = (st.days[day] || 0) + 1; store.set("stats", st);
+  return st;
+}
+/* spaced repetition: box 0 → due tomorrow, 1 → in 3 days, 2 → exam eve, 3 → mastered */
+const DAY = 864e5;
+const dayStart = t => { const d = new Date(t); d.setHours(0, 0, 0, 0); return +d; };
+function srsUpdate(id, correct, key) {
+  const m = store.get(key, {}); const it = m[id] || { box: -1 };
+  it.box = correct ? (it.box < 0 ? 2 : Math.min(3, it.box + 1)) : 0;
+  const eve = dayStart(new Date(QB.exam.date) - DAY), now = Date.now();
+  it.due = it.box === 0 ? dayStart(now) + DAY : it.box === 1 ? dayStart(now) + 3 * DAY : it.box === 2 ? Math.max(dayStart(now) + DAY, Math.min(eve, dayStart(now) + 7 * DAY)) : null;
+  m[id] = it; store.set(key, m);
+}
+const dueIds = key => { const m = store.get(key, {}), now = Date.now(); return Object.keys(m).filter(k => m[k].due && m[k].due <= now); };
+const wrongIds = () => { const p = progress(); return Object.keys(p).filter(k => p[k].last === false); };
+const topicName = id => (QB.topics.find(t => t.id === id) || {}).name || id;
+const allQ = () => QB.mcq.concat(QB.saq);
+const byId = id => allQ().find(q => q.id === id);
 
+/* ---------- effects ---------- */
+const cv = $("#fx"), cx = cv.getContext("2d"); let parts = [], animOn = false;
+function sizeFx() { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; }
+addEventListener("resize", sizeFx); sizeFx();
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function confetti(n = 80, x = .5, y = .35) {
+  if (reduce) return;
+  const cols = ["#3D6BE0", "#7B5CFA", "#16956F", "#F2B35B", "#FF6F91", "#4FD1A5"];
+  for (let i = 0; i < n; i++) parts.push({ x: x * cv.width, y: y * cv.height, vx: (Math.random() - .5) * 14 * devicePixelRatio, vy: (Math.random() * -12 - 4) * devicePixelRatio,
+    g: .35 * devicePixelRatio, s: (4 + Math.random() * 6) * devicePixelRatio, c: pick(cols), r: Math.random() * 6, vr: (Math.random() - .5) * .3, life: 90 + Math.random() * 40 });
+  if (!animOn) { animOn = true; requestAnimationFrame(tick); }
+}
+function tick() {
+  cx.clearRect(0, 0, cv.width, cv.height);
+  parts = parts.filter(p => p.life-- > 0 && p.y < cv.height + 40);
+  parts.forEach(p => { p.vy += p.g; p.x += p.vx; p.y += p.vy; p.vx *= .99; p.r += p.vr; cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c; cx.globalAlpha = Math.min(1, p.life / 40); cx.fillRect(-p.s / 2, -p.s / 3, p.s, p.s * .66); cx.restore(); });
+  if (parts.length) requestAnimationFrame(tick); else { animOn = false; cx.clearRect(0, 0, cv.width, cv.height); }
+}
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2300); }
+function vibrate(ms) { try { navigator.vibrate && navigator.vibrate(ms); } catch (e) {} }
+
+/* ---------- boot ---------- */
+fetch("questions.json").then(r => r.json()).then(d => {
+  QB = d; document.title = d.title || document.title;
+  if (!profile) return welcome();
+  prefs = loadPrefs(); if (!prefs.topics) prefs.topics = d.topics.map(t => t.id);
+  go("home");
+}).catch(() => { $("#app").innerHTML = '<div class="card"><h2>Could not load questions.json</h2><p class="muted">Open this app through its web link (Vercel). Browsers block loading files straight from your disk.</p></div>'; });
+
+$("#brand").onclick = () => go("home");
+$("#who").onclick = () => go("me");
+$$("#tabs button").forEach(b => b.onclick = () => go(b.dataset.t));
+function go(t) {
+  if (!profile) return welcome();
+  clearInterval(timerId); $("#hdr").textContent = ""; S = null; CS = null; tab = t;
+  $$("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.t === t));
+  $("#who").textContent = "👤 " + profile;
+  ({ home, revise, traps, print: printTab, me, cards: cardsTab })[t]();
+  scrollTo(0, 0);
+}
+
+function welcome() {
+  $("#tabs").style.display = "none";
+  const ps = profiles();
+  $("#app").innerHTML = `<div class="card hero"><h2>Welcome to the OPIM639 Exam Prep Quiz 👋</h2>
+   <div class="muted">${QB ? QB.mcq.length : ""} MCQs + ${QB ? QB.saq.length : ""} short questions across all 9 topics, with explanations, exam traps and tips.</div></div>
+   <div class="card"><h2>What should we call you?</h2><p class="muted">Your progress, flags and notes are saved <b>only on this device</b>, under this name. Nothing is sent anywhere. Sharing a laptop? Each person can use their own name.</p>
+   <input type="text" id="nm" maxlength="30" placeholder="e.g. Wee Khee" autocomplete="nickname">
+   ${ps.length ? `<p class="muted" style="margin-top:12px">Or continue as:</p><div class="chips">${ps.map(p => `<button class="chip" data-p="${esc(p)}">${esc(p)}</button>`).join("")}</div>` : ""}
+   <div class="row2"><button class="btn primary" id="start">Let's go 🚀</button></div></div>`;
+  const ok = n => { setProfile(n); $("#tabs").style.display = ""; if (!prefs.topics) prefs.topics = QB.topics.map(t => t.id); go("home"); confetti(60); };
+  $("#start").onclick = () => { const n = $("#nm").value.trim(); if (!n) { $("#nm").focus(); toast("Type a name first"); return; } ok(n); };
+  $("#nm").onkeydown = e => { if (e.key === "Enter") $("#start").click(); };
+  $$("[data-p]").forEach(b => b.onclick = () => ok(b.dataset.p));
+}
+
+/* ---------- HOME ---------- */
+function daysLeft() { const ms = new Date(QB.exam.date) - Date.now(); return ms > 0 ? ms : 0; }
+function ring(pct, color) { const r = 18, c = 2 * Math.PI * r; return `<svg class="ring" viewBox="0 0 46 46"><circle class="bgc" cx="23" cy="23" r="${r}"/><circle class="fg" cx="23" cy="23" r="${r}" stroke="${color}" stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - pct)}" transform="rotate(-90 23 23)"/><text x="23" y="27" text-anchor="middle" font-size="11" font-weight="700" fill="currentColor">${Math.round(pct * 100)}%</text></svg>`; }
+const TCOL = { T1: "#2E5BBA", T2: "#1F8A70", T3: "#C2185B", T4: "#D06A00", T5: "#6A4C93", T6: "#00838F", T7: "#B23A48", T8: "#3D7A2E", T9: "#8C6D1F" };
 function home() {
-  clearInterval(timerId); $("#hdr").textContent = ""; $("#homeBtn").hidden = true;
-  const p = progress();
-  const statHtml = QB.topics.map(t => {
+  const p = progress(), st = store.get("stats", { streak: 0, best: 0, answered: 0 }), ms = daysLeft();
+  const d = Math.floor(ms / 864e5), h = Math.floor(ms % 864e5 / 36e5);
+  const mastered = QB.mcq.filter(q => p[q.id] && p[q.id].last).length;
+  const tcards = QB.topics.map(t => {
     const ids = QB.mcq.filter(q => q.topic === t.id).map(q => q.id);
-    const seen = ids.filter(i => p[i]).length, ok = ids.filter(i => p[i] && p[i].last).length;
-    return `<div><span class="muted">${t.id} ${esc(t.name)}</span><b>${ok}/${ids.length}</b><span class="muted">${seen} tried</span></div>`;
+    const ok = ids.filter(i => p[i] && p[i].last).length, seen = ids.filter(i => p[i]).length;
+    return `<button class="tcard" data-quick="${t.id}">${ring(ok / ids.length, TCOL[t.id])}<div><b>${t.id} ${esc(t.name)}</b><span>${ok}/${ids.length} right · ${seen} tried</span></div></button>`;
   }).join("");
-  const nWrong = wrongIds().length;
+  const nWrong = wrongIds().length, nFlag = Object.keys(flags()).length;
   $("#app").innerHTML = `
-  <div class="card"><h2>1 · Topics <span class="muted">(in course order)</span></h2>
-    <div class="chips" id="tchips">${QB.topics.map(t => `<button class="chip ${prefs.topics.includes(t.id) ? "on" : ""}" data-t="${t.id}">${t.id} ${esc(t.name)}</button>`).join("")}</div>
-    <div class="row2"><button class="btn ghost" id="allT">All topics</button><button class="btn ghost" id="noT">Clear</button></div></div>
-  <div class="card"><h2>2 · Question type</h2>
-    <div class="seg" id="types">${[["mcq", "MCQs (" + QB.mcq.length + ")"], ["saq", "Short questions (" + QB.saq.length + ")"]].map(([k, l]) => `<button class="chip ${prefs.type === k ? "on" : ""}" data-v="${k}">${l}</button>`).join("")}</div>
-    <div id="mcqopts" ${prefs.type === "saq" ? "hidden" : ""}>
-      <h2 style="margin-top:14px">3 · Mode</h2>
-      <div class="seg" id="modes">${[["practice", "Practice (instant feedback)"], ["exam", "Exam (timed, score at end)"]].map(([k, l]) => `<button class="chip ${prefs.mode === k ? "on" : ""}" data-v="${k}">${l}</button>`).join("")}</div>
-      <div id="examN" ${prefs.mode === "exam" ? "" : "hidden"} style="margin-top:10px">Questions: <select id="nsel">${[10, 20, 30, 45].map(n => `<option ${prefs.examN == n ? "selected" : ""}>${n}</option>`).join("")}</select> <span class="muted">· 72 s each</span></div>
-      <h2 style="margin-top:14px">4 · Filters</h2>
-      <div class="chips">
-        <button class="chip ${prefs.random ? "on" : ""}" id="rnd">🔀 Randomise questions</button>
-        <button class="chip ${prefs.shuffleOpts ? "on" : ""}" id="shf">Shuffle options</button>
-        <button class="chip ${prefs.must ? "on" : ""}" id="must">🔴 Must-know only</button>
-        <select id="diff">${[["all", "All levels"], ["E", "Easy"], ["M", "Medium"], ["H", "Hard"]].map(([k, l]) => `<option value="${k}" ${prefs.diff === k ? "selected" : ""}>${l}</option>`).join("")}</select>
-      </div>
-    </div>
-    <div class="row2"><button class="btn primary" id="go">Start</button>
-      <button class="btn ghost" id="retry" ${nWrong ? "" : "disabled"}>Retry my wrong answers (${nWrong})</button></div>
-    <p class="muted" id="count"></p></div>
-  <div class="card"><h2>Your progress <span class="muted">(saved on this device)</span></h2><div class="stat">${statHtml}</div>
-    <div class="row2"><button class="btn ghost" id="reset">Reset progress</button></div></div>`;
-  const save = () => { store.set("prefs", prefs); };
-  const recount = () => { const n = pool().length; $("#count").textContent = n + " questions match your choices."; $("#go").disabled = !n; };
-  document.querySelectorAll("#tchips .chip").forEach(b => b.onclick = () => { const t = b.dataset.t; prefs.topics = prefs.topics.includes(t) ? prefs.topics.filter(x => x !== t) : prefs.topics.concat(t).sort(); b.classList.toggle("on"); save(); recount(); });
-  $("#allT").onclick = () => { prefs.topics = QB.topics.map(t => t.id); save(); home(); };
-  $("#noT").onclick = () => { prefs.topics = []; save(); home(); };
-  document.querySelectorAll("#types .chip").forEach(b => b.onclick = () => { prefs.type = b.dataset.v; save(); home(); });
-  document.querySelectorAll("#modes .chip").forEach(b => b.onclick = () => { prefs.mode = b.dataset.v; save(); home(); });
-  if ($("#nsel")) $("#nsel").onchange = e => { prefs.examN = +e.target.value; save(); };
-  $("#rnd").onclick = () => { prefs.random = !prefs.random; save(); home(); };
-  $("#shf").onclick = () => { prefs.shuffleOpts = !prefs.shuffleOpts; save(); home(); };
-  $("#must").onclick = () => { prefs.must = !prefs.must; save(); home(); };
-  $("#diff").onchange = e => { prefs.diff = e.target.value; save(); recount(); };
+  <div class="card hero"><h2>Hi ${esc(profile)}! ${ms ? "Let's earn some marks today." : "Good luck in the exam! 🍀"}</h2>
+   <div class="muted">${esc(QB.exam.label)}</div>
+   <div class="count"><div><b>${d}</b>days</div><div><b>${h}</b>hours</div><div><b>${mastered}</b>of ${QB.mcq.length} right</div><div><b>${st.best}🔥</b>best streak</div></div></div>
+  <div class="card"><h2>Today's plan</h2><div class="actions">
+   <button class="act" style="background:linear-gradient(135deg,#16956F,#2BB58A)" id="aDaily"><span class="ic">☀️</span><b>Daily 10</b><span>Mix weighted to your weak topics</span></button>
+   <button class="act" style="background:linear-gradient(135deg,#D06A00,#F2A33A)" id="aDue"><span class="ic">🔁</span><b>Due for review (${dueIds("srs").length})</b><span>Spaced repetition: 1 day · 3 days · exam eve</span></button>
+   <button class="act" style="background:linear-gradient(135deg,#C2185B,#E5537F)" id="aDrill"><span class="ic">🧮</span><b>Calculation drills</b><span>Endless fresh numbers</span></button>
+   <button class="act" style="background:linear-gradient(135deg,#1E2761,#4A3DB5)" id="aMock"><span class="ic">📝</span><b>Full mock paper</b><span>40 MCQs + 3 short Qs · 2 hrs</span></button>
+   <button class="act" style="background:linear-gradient(135deg,#6A4C93,#9A7BD0)" id="aCards"><span class="ic">🃏</span><b>Flashcards (${QB.cards.length})</b><span>Definitions & key numbers</span></button>
+  </div>
+  <h3>Your study streak <span class="muted">(last 4 weeks)</span></h3>${calendar()}
+  <div class="tipcard" style="margin-top:12px">💡 <b>Tip:</b> ${esc(pick(QB.tips))}</div></div>
+  <div class="card"><h2>Quick start by topic <span class="muted">(tap to practise that topic)</span></h2><div class="grid">${tcards}</div></div>
+  <div class="card"><h2>Build your own set</h2>
+   <h3>1 · Topics</h3><div class="chips" id="tchips">${QB.topics.map(t => `<button class="chip ${prefs.topics.includes(t.id) ? "on" : ""}" data-t="${t.id}">${t.id} ${esc(t.name)}</button>`).join("")}</div>
+   <div class="row2"><button class="btn ghost" id="allT">All topics</button><button class="btn ghost" id="noT">Clear</button></div>
+   <h3>2 · Question type</h3><div class="chips" id="types">${[["mcq", `MCQs (${QB.mcq.length})`], ["saq", `Short questions (${QB.saq.length})`]].map(([k, l]) => `<button class="chip ${prefs.type === k ? "on" : ""}" data-v="${k}">${l}</button>`).join("")}</div>
+   <div ${prefs.type === "saq" ? "hidden" : ""}>
+    <h3>3 · Mode</h3><div class="chips" id="modes">${[["practice", "🎯 Practice (instant feedback)"], ["exam", "⏱ Exam (timed, score at end)"]].map(([k, l]) => `<button class="chip ${prefs.mode === k ? "on" : ""}" data-v="${k}">${l}</button>`).join("")}</div>
+    <div ${prefs.mode === "exam" ? "" : "hidden"} style="margin-top:10px">Questions: <select id="nsel">${[10, 20, 30, 45, 60].map(n => `<option ${prefs.examN == n ? "selected" : ""}>${n}</option>`).join("")}</select> <span class="muted">· 72 s each, like the real paper</span></div>
+    <h3>4 · Filters</h3><div class="chips">
+     <button class="chip ${prefs.random ? "on" : ""}" id="rnd">🔀 Randomise order</button>
+     <button class="chip ${prefs.shuffleOpts ? "on" : ""}" id="shf">🔁 Shuffle options</button>
+     <button class="chip ${prefs.must ? "on" : ""}" id="must">🔴 Must-know only</button>
+     <button class="chip ${prefs.visual ? "on" : ""}" id="vis">🖼 Slide-diagram questions only</button>
+     <select id="diff">${[["all", "All levels"], ["E", "Easy"], ["M", "Medium"], ["H", "Hard"]].map(([k, l]) => `<option value="${k}" ${prefs.diff === k ? "selected" : ""}>${l}</option>`).join("")}</select></div>
+   </div>
+   <div class="row2"><button class="btn primary" id="go">Start ▶</button></div>
+   <div class="row2"><button class="btn ghost" id="retry" ${nWrong ? "" : "disabled"}>❌ Retry wrong (${nWrong})</button><button class="btn ghost" id="flagged" ${nFlag ? "" : "disabled"}>📌 Practise flagged (${nFlag})</button></div>
+   <p class="muted" id="count"></p></div>`;
+  $("#aDaily").onclick = daily10; $("#aDue").onclick = () => { const d = new Set(dueIds("srs")); const qs = QB.mcq.filter(q => d.has(q.id)); if (!qs.length) return toast("Nothing due now. Come back tomorrow! 🌙"); prefs.type = "mcq"; start(qs, "practice"); };
+  $("#aDrill").onclick = drillMenu; $("#aMock").onclick = mockIntro; $("#aCards").onclick = () => go("cards");
+  const recount = () => { const n = pool().length; $("#count").textContent = `${n} question${n === 1 ? "" : "s"} match your choices.`; $("#go").disabled = !n; };
+  $$("[data-quick]").forEach(b => b.onclick = () => { prefs.type = "mcq"; start(QB.mcq.filter(q => q.topic === b.dataset.quick), "practice"); });
+  $$("#tchips .chip").forEach(b => b.onclick = () => { const t = b.dataset.t; prefs.topics = prefs.topics.includes(t) ? prefs.topics.filter(x => x !== t) : prefs.topics.concat(t).sort(); b.classList.toggle("on"); savePrefs(); recount(); });
+  $("#allT").onclick = () => { prefs.topics = QB.topics.map(t => t.id); savePrefs(); home(); };
+  $("#noT").onclick = () => { prefs.topics = []; savePrefs(); home(); };
+  $$("#types .chip").forEach(b => b.onclick = () => { prefs.type = b.dataset.v; savePrefs(); home(); });
+  $$("#modes .chip").forEach(b => b.onclick = () => { prefs.mode = b.dataset.v; savePrefs(); home(); });
+  if ($("#nsel")) $("#nsel").onchange = e => { prefs.examN = +e.target.value; savePrefs(); };
+  [["rnd", "random"], ["shf", "shuffleOpts"], ["must", "must"], ["vis", "visual"]].forEach(([id, k]) => { if ($("#" + id)) $("#" + id).onclick = () => { prefs[k] = !prefs[k]; savePrefs(); home(); }; });
+  if ($("#diff")) $("#diff").onchange = e => { prefs.diff = e.target.value; savePrefs(); recount(); };
   $("#go").onclick = () => start(pool());
   $("#retry").onclick = () => { const w = new Set(wrongIds()); prefs.type = "mcq"; start(QB.mcq.filter(q => w.has(q.id)), "practice"); };
-  $("#reset").onclick = () => { if (confirmReset()) { store.set("progress", {}); home(); } };
+  $("#flagged").onclick = () => { const f = flags(); const mc = QB.mcq.filter(q => f[q.id]); if (mc.length) { prefs.type = "mcq"; start(mc, "practice"); } else { prefs.type = "saq"; start(QB.saq.filter(q => f[q.id])); } };
   recount();
 }
-function confirmReset() { const b = $("#reset"); if (b.dataset.armed) return true; b.dataset.armed = 1; b.textContent = "Tap again to confirm reset"; return false; }
-
 function pool() {
   const set = prefs.type === "saq" ? QB.saq : QB.mcq;
-  return set.filter(q => prefs.topics.includes(q.topic) && (!prefs.must || q.priority === "must") && (prefs.type === "saq" || prefs.diff === "all" || q.difficulty === prefs.diff));
+  return set.filter(q => prefs.topics.includes(q.topic) && (!prefs.must || q.priority === "must") && (prefs.type === "saq" || ((prefs.diff === "all" || q.difficulty === prefs.diff) && (!prefs.visual || q.visual))));
 }
 
+/* ---------- QUIZ ---------- */
 function start(list, forceMode) {
+  if (!list.length) return toast("No questions match");
+  const mode = prefs.type === "saq" && !forceMode ? "saq" : (forceMode || prefs.mode);
   let qs = prefs.random ? shuffle(list) : list.slice();
-  const mode = prefs.type === "saq" ? "saq" : (forceMode || prefs.mode);
   if (mode === "exam") qs = shuffle(list).slice(0, prefs.examN);
-  qs = qs.map(q => { if (!q.options) return q; const order = prefs.shuffleOpts || mode === "exam" ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]; return Object.assign({}, q, { order }); });
-  S = { qs, i: 0, mode, ans: {}, startT: Date.now() };
-  $("#homeBtn").hidden = false; $("#homeBtn").onclick = home;
+  qs = qs.map(q => q.options ? Object.assign({}, q, { order: (prefs.shuffleOpts || mode === "exam") ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3] }) : q);
+  S = { qs, i: 0, mode, ans: {}, startT: Date.now(), streak: 0 };
+  $$("#tabs button").forEach(b => b.classList.remove("on"));
   if (mode === "exam") { const end = Date.now() + qs.length * 72000; timerId = setInterval(() => { const s = Math.max(0, Math.round((end - Date.now()) / 1000)); $("#hdr").textContent = "⏱ " + Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); if (!s) finishExam(); }, 500); }
   render();
 }
-
-function record(q, correct) { const p = progress(); const r = p[q.id] || { seen: 0, correct: 0 }; r.seen++; if (correct) r.correct++; r.last = correct; p[q.id] = r; store.set("progress", p); }
-
 function metaTags(q) {
-  return `<div class="meta"><span class="tag">${q.topic} · ${esc(topicName(q.topic))}</span>${q.difficulty ? `<span class="tag">${{ E: "Easy", M: "Medium", H: "Hard" }[q.difficulty]}</span>` : ""}${q.kind ? `<span class="tag">${q.kind}</span>` : ""}${q.marks ? `<span class="tag">${q.marks} marks</span>` : ""}${q.priority === "must" ? '<span class="tag must">🔴 must know</span>' : ""}<span class="tag">${esc(q.id)}</span></div>`;
+  const f = flags()[q.id];
+  return `<div class="meta"><span class="tag" style="color:${TCOL[q.topic]}">● ${q.topic} ${esc(topicName(q.topic))}</span>${q.difficulty ? `<span class="tag">${{ E: "Easy", M: "Medium", H: "Hard" }[q.difficulty]}</span>` : ""}${q.marks ? `<span class="tag">${q.marks} marks</span>` : ""}${q.priority === "must" ? '<span class="tag must">🔴 must know</span>' : ""}${q.visual ? '<span class="tag vis">🖼 from slide diagram</span>' : ""}<span style="flex:1"></span>${q.drill ? '<span class="tag">🧮 drill</span>' : `<button class="flag ${f ? "on" : ""}" id="flagBtn" title="Flag to revise (F)">${f ? "📌 Flagged" : "📍 Flag"}</button>`}</div>`;
 }
-
+function bindFlag(q) { if (!$("#flagBtn")) return; $("#flagBtn").onclick = () => { const on = toggleFlag(q.id); $("#flagBtn").className = "flag " + (on ? "on" : ""); $("#flagBtn").textContent = on ? "📌 Flagged" : "📍 Flag"; toast(on ? "Added to your revise list 📌" : "Removed from revise list"); }; }
 function render() {
   const q = S.qs[S.i], n = S.qs.length;
-  const head = `<div class="muted">Question ${S.i + 1} of ${n}</div><div class="bar"><i style="width:${(S.i / n) * 100}%"></i></div>`;
+  const head = `<div class="topline"><span class="muted">Question ${S.i + 1} of ${n}</span>${S.mode === "practice" ? `<span class="streak">${S.streak ? "🔥 " + S.streak + " in a row" : ""}</span>` : ""}</div><div class="bar"><i style="width:${(S.i / n) * 100}%"></i></div>`;
   if (S.mode === "saq") return renderSaq(q, head);
-  const chosen = S.ans[q.id];
-  const reveal = S.mode === "practice" && chosen !== undefined;
+  const chosen = S.ans[q.id], reveal = S.mode === "practice" && chosen !== undefined;
   const opts = q.order.map((oi, k) => {
     let cls = "opt"; if (chosen === oi) cls += " sel";
     if (reveal) { if (oi === q.answer) cls += " right"; else if (oi === chosen) cls += " wrong"; }
     const why = reveal && oi !== q.answer && q.why_wrong[oi] ? `<div class="why">✗ ${esc(q.why_wrong[oi])}</div>` : "";
-    return `<button class="${cls}" data-o="${oi}" ${reveal ? "disabled" : ""}><b>${L[k]}</b>${esc(q.options[oi])}${why}</button>`;
+    return `<button class="${cls}" data-o="${oi}" ${reveal ? "disabled" : ""}><span class="k">${L[k]}</span><span>${esc(q.options[oi])}${why}</span></button>`;
   }).join("");
   const ok = chosen === q.answer;
-  const fb = reveal ? `<div class="fb ${ok ? "ok" : "no"}"><b>${ok ? "✓ Correct." : "✗ Not quite. Answer: " + L[q.order.indexOf(q.answer)]}</b><div style="margin-top:6px">${esc(q.explanation)}</div><div class="muted" style="margin-top:6px">Source: ${esc(q.source || "")}</div></div>` : "";
+  const trap = reveal && !ok && QB.traps[q.topic] ? `<div class="fb tip">⚠️ <b>Trap to remember (${q.topic}):</b> ${esc(pick(QB.traps[q.topic]))}</div>` : "";
+  const rs = store.get("reasons", {})[q.id];
+  const why = reveal && !ok && !q.drill ? `<div class="fb tip"><b>Why did you miss it?</b> <span class="muted">(helps you spot your pattern)</span><div class="why-chips">${REASONS.map(([k, l]) => `<button class="chip ${rs === k ? "on" : ""}" data-why="${k}">${l}</button>`).join("")}</div></div>` : "";
+  const fb = reveal ? `<div class="fb ${ok ? "ok" : "no"}"><div class="head">${ok ? (q.cheer || pick(QB.cheers.right)) : pick(QB.cheers.wrong) + " Answer: " + L[q.order.indexOf(q.answer)]}</div><div style="margin-top:6px">${esc(q.explanation)}</div><div class="muted" style="margin-top:6px">Source: ${esc(q.source || "")}</div></div>${why}${trap}` : "";
   const last = S.i === n - 1;
-  $("#app").innerHTML = `<div class="card">${head}${metaTags(q)}<div class="qtext">${esc(q.q)}</div>${opts}${fb}
+  $("#app").innerHTML = `<div class="card qcard">${head}${metaTags(q)}<div class="qtext">${esc(q.q)}</div>${opts}${fb}
    <div class="row2"><button class="btn ghost" id="prev" ${S.i ? "" : "disabled"}>◀ Back</button>
-   ${S.mode === "exam" && last ? '<button class="btn primary" id="submit">Submit exam</button>' : `<button class="btn primary" id="next" ${S.mode === "practice" && !reveal ? "disabled" : ""}>${last ? "Finish" : "Next ▶"}</button>`}</div></div>`;
-  document.querySelectorAll(".opt").forEach(b => b.onclick = () => {
-    const oi = +b.dataset.o; if (S.mode === "practice" && S.ans[q.id] !== undefined) return;
-    S.ans[q.id] = oi; if (S.mode === "practice") record(q, oi === q.answer); render();
-  });
-  $("#prev").onclick = () => { S.i--; render(); window.scrollTo(0, 0); };
-  if ($("#next")) $("#next").onclick = () => { if (last) return S.mode === "exam" ? finishExam() : practiceDone(); S.i++; render(); window.scrollTo(0, 0); };
-  if ($("#submit")) $("#submit").onclick = finishExam;
+   ${(S.mode === "exam" || S.mode === "mock") && last ? `<button class="btn primary" id="submit">${S.mode === "mock" ? "Go to short questions ▶" : "Submit exam ✅"}</button>` : `<button class="btn primary" id="next" ${S.mode === "practice" && !reveal ? "disabled" : ""}>${last ? "Finish 🏁" : "Next ▶"}</button>`}</div>
+   <div class="topline" style="margin-top:8px"><span class="kbd">Keys: A–D or 1–4 · Enter = next · F = flag</span></div></div>`;
+  bindFlag(q);
+  $$("[data-why]").forEach(b => b.onclick = () => { const m = store.get("reasons", {}); m[q.id] = b.dataset.why; store.set("reasons", m); $$("[data-why]").forEach(x => x.classList.toggle("on", x === b)); toast("Noted. Check your pattern in Profile 👤"); });
+  $$(".opt").forEach(b => b.onclick = () => choose(+b.dataset.o));
+  $("#prev").onclick = () => { S.i--; render(); };
+  if ($("#next")) $("#next").onclick = next;
+  if ($("#submit")) $("#submit").onclick = () => S.mode === "mock" ? mockSaq(0) : finishExam();
 }
-
+function choose(oi) {
+  const q = S.qs[S.i]; if (S.mode === "practice" && S.ans[q.id] !== undefined) return;
+  S.ans[q.id] = oi;
+  if (S.mode === "practice") {
+    const ok = oi === q.answer; if (q.drill) recordDrill(ok); else record(q, ok);
+    if (ok) { S.streak++; vibrate(20); if (S.streak % 5 === 0) { confetti(120); toast(`🔥 ${S.streak} in a row! Keep it up!`); } else confetti(26, .5, .55); }
+    else { S.streak = 0; vibrate([40, 40, 40]); }
+  }
+  render();
+}
+function next() { if (S.i === S.qs.length - 1) return S.mode === "exam" ? finishExam() : S.mode === "mock" ? mockSaq(0) : practiceDone(); S.i++; render(); scrollTo(0, 0); }
+addEventListener("keydown", e => {
+  if (!S || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  if (!$(".opt") && !(e.key === "Enter" && $("#next")) && !(e.key.toUpperCase() === "F" && $("#flagBtn"))) return;
+  const q = S.qs[S.i]; const k = e.key.toUpperCase();
+  if (q.options && "ABCD1234".includes(k) && k.length === 1) { const idx = "ABCD".includes(k) ? "ABCD".indexOf(k) : +k - 1; choose(q.order[idx]); }
+  else if (k === "ENTER" && $("#next") && !$("#next").disabled) next();
+  else if (k === "F" && $("#flagBtn")) $("#flagBtn").click();
+});
 function practiceDone() {
-  const n = S.qs.length, ok = S.qs.filter(q => S.ans[q.id] === q.answer).length;
-  $("#app").innerHTML = `<div class="card"><h2>Set complete</h2><div class="big">${ok} / ${n}</div><p class="muted">Wrong answers are saved. Use “Retry my wrong answers” on the home screen.</p><div class="row2"><button class="btn primary" id="h">Home</button></div></div>`;
-  $("#h").onclick = home;
+  const n = S.qs.length, ok = S.qs.filter(q => S.ans[q.id] === q.answer).length, pct = Math.round(ok / n * 100);
+  if (pct >= 80) confetti(160);
+  $("#app").innerHTML = `<div class="card" style="text-align:center"><h2>Set complete ${pct >= 80 ? "🏆" : pct >= 60 ? "👏" : "💪"}</h2><div class="big">${ok} / ${n}</div><p>${esc(pick(QB.cheers.end))}</p>
+   <div class="tipcard" style="text-align:left">💡 ${esc(pick(QB.tips))}</div>
+   <div class="row2"><button class="btn primary" id="h">Home</button><button class="btn ghost" id="rw">Revise list 📌</button></div></div>`;
+  $("#h").onclick = () => go("home"); $("#rw").onclick = () => go("revise");
 }
-
 function finishExam() {
   clearInterval(timerId); $("#hdr").textContent = "";
   const n = S.qs.length; let ok = 0;
   S.qs.forEach(q => { const c = S.ans[q.id] === q.answer; if (c) ok++; record(q, c); });
-  const pct = Math.round(ok / n * 100), mins = Math.round((Date.now() - S.startT) / 60000);
+  const pct = Math.round(ok / n * 100), mins = Math.max(1, Math.round((Date.now() - S.startT) / 60000));
   const byT = {}; S.qs.forEach(q => { byT[q.topic] = byT[q.topic] || [0, 0]; byT[q.topic][1]++; if (S.ans[q.id] === q.answer) byT[q.topic][0]++; });
-  const weak = Object.entries(byT).filter(([, v]) => v[0] / v[1] < 0.7).map(([k]) => k + " " + topicName(k));
+  const weak = Object.entries(byT).filter(([, v]) => v[0] / v[1] < .7).map(([k]) => k + " " + topicName(k));
+  const hist = store.get("exams", []); hist.push({ t: Date.now(), n, ok, pct }); store.set("exams", hist.slice(-30));
+  if (pct >= 80) confetti(200);
   const rev = S.qs.map((q, i) => { const c = S.ans[q.id] === q.answer, a = S.ans[q.id];
-    return `<div class="rev"><div class="muted">${i + 1}. ${q.topic} · ${esc(q.id)} ${c ? "✓" : "✗"}</div><div><b>${esc(q.q)}</b></div>
-    <div>Your answer: ${a === undefined ? "<i>blank</i>" : esc(q.options[a])}</div>${c ? "" : `<div style="color:var(--ok)">Correct: ${esc(q.options[q.answer])}</div>`}
-    <div class="muted">${esc(q.explanation)}</div></div>`; }).join("");
-  $("#app").innerHTML = `<div class="card"><h2>Exam result</h2><div class="big">${pct}%</div><p>${ok} of ${n} correct · ${mins} min</p>
-   ${weak.length ? `<div class="fb no"><b>Revise next:</b> ${esc(weak.join(", "))}</div>` : '<div class="fb ok"><b>Strong across all topics in this set.</b></div>'}
-   <div class="row2"><button class="btn primary" id="h">Home</button></div></div><div class="card"><h2>Review</h2>${rev}</div>`;
-  $("#h").onclick = home;
+    return `<div class="rev"><div class="topline"><span class="muted">${i + 1}. ${q.topic} · ${esc(q.id)} ${c ? "✅" : "❌"}</span><button class="flag ${flags()[q.id] ? "on" : ""}" data-fl="${q.id}">${flags()[q.id] ? "📌" : "📍"}</button></div><div><b>${esc(q.q)}</b></div>
+    <div>Your answer: ${a === undefined ? "<i>blank</i>" : esc(q.options[a])}</div>${c ? "" : `<div style="color:var(--ok)">Correct: ${esc(q.options[q.answer])}</div>`}<div class="muted">${esc(q.explanation)}</div></div>`; }).join("");
+  $("#app").innerHTML = `<div class="card" style="text-align:center"><h2>Exam result</h2><div class="big">${pct}%</div><p>${ok} of ${n} correct · ${mins} min</p>
+   ${weak.length ? `<div class="fb no" style="text-align:left"><b>Revise next:</b> ${esc(weak.join(", "))}</div>` : '<div class="fb ok"><b>Strong across every topic in this set! 🌟</b></div>'}
+   <p class="muted">${esc(pick(QB.cheers.end))}</p><div class="row2"><button class="btn primary" id="h">Home</button><button class="btn ghost" id="pr">🖨 Print this review</button></div></div>
+   <div class="card"><h2>Review</h2>${rev}</div>`;
+  $("#h").onclick = () => go("home");
+  $("#pr").onclick = () => doPrint(S.qs.map(q => q.id), "Exam review", true);
+  $$("[data-fl]").forEach(b => b.onclick = () => { const on = toggleFlag(b.dataset.fl); b.className = "flag " + (on ? "on" : ""); b.textContent = on ? "📌" : "📍"; });
+}
+function renderSaq(q, head) {
+  const n = S.qs.length, shown = S.ans[q.id] === "shown", draft = (store.get("drafts", {}))[q.id] || "";
+  $("#app").innerHTML = `<div class="card qcard">${head}${metaTags(q)}<div class="qtext">${esc(q.q)}</div>
+   <textarea id="draft" placeholder="Write or think through your answer first (saved on this device)…">${esc(draft)}</textarea>
+   ${shown ? `<div class="fb ok"><div class="head">Model answer</div><ul class="tight">${q.model_answer.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+   <div class="fb tip"><b>Mark yourself</b>${q.marking.map((m, k) => `<label class="ck"><input type="checkbox" data-k="${k}"><span>${esc(m)}</span></label>`).join("")}</div>
+   <div class="fb no"><b>Common mistakes</b><ul class="tight">${q.mistakes.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div><p class="muted">Source: ${esc(q.source || "")}</p>` : ""}
+   <div class="row2"><button class="btn ghost" id="prev" ${S.i ? "" : "disabled"}>◀ Back</button>
+   ${shown ? `<button class="btn primary" id="next">${S.i === n - 1 ? "Finish 🏁" : "Next ▶"}</button>` : '<button class="btn primary" id="show">Show model answer 👀</button>'}</div></div>`;
+  bindFlag(q);
+  $("#draft").oninput = e => { const d = store.get("drafts", {}); d[q.id] = e.target.value; store.set("drafts", d); };
+  $("#prev").onclick = () => { S.i--; render(); };
+  if ($("#show")) $("#show").onclick = () => { S.ans[q.id] = "shown"; render(); };
+  if ($("#next")) $("#next").onclick = () => { if (S.i === n - 1) { confetti(80); return go("home"); } S.i++; render(); scrollTo(0, 0); };
 }
 
-function renderSaq(q, head) {
-  const n = S.qs.length, shown = S.ans[q.id] === "shown";
-  const draft = (store.get("drafts", {}))[q.id] || "";
-  $("#app").innerHTML = `<div class="card">${head}${metaTags(q)}<div class="qtext">${esc(q.q)}</div>
-   <textarea id="draft" placeholder="Write or think through your answer first (optional, saved on this device)…">${esc(draft)}</textarea>
-   ${shown ? `<div class="fb ok"><b>Model answer</b><ul class="tight">${q.model_answer.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
-   <div class="fb" style="background:var(--warnbg)"><b>Mark yourself</b>${q.marking.map((m, k) => `<label class="ck"><input type="checkbox" data-k="${k}"><span>${esc(m)}</span></label>`).join("")}</div>
-   <div class="fb no"><b>Common mistakes</b><ul class="tight">${q.mistakes.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
-   <p class="muted">Source: ${esc(q.source || "")}</p>` : ""}
-   <div class="row2"><button class="btn ghost" id="prev" ${S.i ? "" : "disabled"}>◀ Back</button>
-   ${shown ? `<button class="btn primary" id="next">${S.i === n - 1 ? "Finish" : "Next ▶"}</button>` : '<button class="btn primary" id="show">Show model answer</button>'}</div></div>`;
-  $("#draft").oninput = e => { const d = store.get("drafts", {}); d[q.id] = e.target.value; store.set("drafts", d); };
-  $("#prev").onclick = () => { S.i--; render(); window.scrollTo(0, 0); };
-  if ($("#show")) $("#show").onclick = () => { S.ans[q.id] = "shown"; render(); };
-  if ($("#next")) $("#next").onclick = () => { if (S.i === n - 1) return home(); S.i++; render(); window.scrollTo(0, 0); };
+/* ---------- REVISE ---------- */
+function revise() {
+  const p = progress(), f = flags();
+  const wrong = QB.mcq.filter(q => p[q.id] && p[q.id].last === false);
+  const ever = QB.mcq.filter(q => p[q.id] && p[q.id].wrongEver && p[q.id].last);
+  const fl = allQ().filter(q => f[q.id]);
+  const item = q => `<div class="rev"><div class="topline"><span class="muted">${q.topic} · ${esc(q.id)}</span><button class="flag ${f[q.id] ? "on" : ""}" data-fl="${q.id}">${f[q.id] ? "📌 Flagged" : "📍 Flag"}</button></div><b>${esc(q.q)}</b>
+   <details style="margin-top:6px"><summary>Show answer</summary>${q.options ? `<div style="color:var(--ok);margin-top:6px">✔ ${L[q.answer]}. ${esc(q.options[q.answer])}</div><div class="muted">${esc(q.explanation)}</div>` : `<ul class="tight">${q.model_answer.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`}</details></div>`;
+  $("#app").innerHTML = `
+   <div class="card"><h2>📌 Your revise list</h2><p class="muted">Questions you got wrong or flagged. Practise them until they turn green, or print them for a quick read.</p>
+    <div class="row2"><button class="btn primary" id="pw" ${wrong.length ? "" : "disabled"}>❌ Practise wrong (${wrong.length})</button><button class="btn primary" id="pf" ${fl.filter(q => q.options).length ? "" : "disabled"}>📌 Practise flagged MCQs (${fl.filter(q => q.options).length})</button></div>
+    <div class="row2"><button class="btn ghost" id="prw" ${wrong.length + fl.length ? "" : "disabled"}>🖨 Print wrong + flagged</button></div></div>
+   <div class="card"><h2>❌ Currently wrong (${wrong.length})</h2>${wrong.length ? wrong.map(item).join("") : '<p class="muted">Nothing here yet. 🎉</p>'}</div>
+   <div class="card"><h2>📌 Flagged (${fl.length})</h2>${fl.length ? fl.map(item).join("") : '<p class="muted">Tap “📍 Flag” on any question to save it here.</p>'}</div>
+   <div class="card"><h2>✅ Fixed: once wrong, now right (${ever.length})</h2><p class="muted">Good progress. Glance at these once more before the exam.</p>${ever.map(item).join("")}</div>`;
+  $("#pw").onclick = () => start(wrong, "practice");
+  $("#pf").onclick = () => start(fl.filter(q => q.options), "practice");
+  $("#prw").onclick = () => doPrint([...new Set(wrong.concat(fl).map(q => q.id))], "My wrong & flagged questions", true);
+  $$("[data-fl]").forEach(b => b.onclick = () => { toggleFlag(b.dataset.fl); revise(); });
+}
+
+/* ---------- TRAPS & TIPS ---------- */
+function traps() {
+  $("#app").innerHTML = `<div class="card hero"><h2>⚠️ Exam traps & tips</h2><div class="muted">The mistakes examiners love to test. Read these the night before.</div></div>
+   <div class="card"><h2>💡 How to score</h2>${QB.tips.map(t => `<div class="tipcard">${esc(t)}</div>`).join("")}</div>
+   ${QB.topics.map(t => `<div class="card"><h2 style="color:${TCOL[t.id]}">${t.id} · ${esc(t.name)}</h2>${(QB.traps[t.id] || []).map(x => `<div class="trap">${esc(x)}</div>`).join("")}
+   <div class="row2"><button class="btn ghost" data-quick="${t.id}">Practise ${t.id} ▶</button></div></div>`).join("")}
+   <div class="card" style="text-align:center"><p><b>${esc(pick(QB.cheers.end))}</b></p></div>`;
+  $$("[data-quick]").forEach(b => b.onclick = () => { prefs.type = "mcq"; start(QB.mcq.filter(q => q.topic === b.dataset.quick), "practice"); });
+}
+
+/* ---------- PRINT / EXPORT ---------- */
+function printTab() {
+  const p = progress(), f = flags();
+  $("#app").innerHTML = `<div class="card"><h2>🖨️ Print or export</h2><p class="muted">Choose what to include, then print (or “Save as PDF” in the print dialog) or download a file you can open on any device.</p>
+   <h3>What</h3><div class="chips" id="scope">${[["all", "All questions"], ["wrong", "Wrong only"], ["flag", "Flagged only"], ["wf", "Wrong + flagged"]].map(([k, l], i) => `<button class="chip ${i ? "" : "on"}" data-s="${k}">${l}</button>`).join("")}</div>
+   <h3>Topics</h3><div class="chips" id="ptop">${QB.topics.map(t => `<button class="chip on" data-t="${t.id}">${t.id}</button>`).join("")}</div>
+   <h3>Include</h3>
+   <label class="ck"><input type="checkbox" id="iM" checked><span>MCQs</span></label>
+   <label class="ck"><input type="checkbox" id="iS" checked><span>Short-answer questions (with model answers)</span></label>
+   <label class="ck"><input type="checkbox" id="iA" checked><span>Show answers & explanations (untick for a blank practice paper)</span></label>
+   <label class="ck"><input type="checkbox" id="iT" checked><span>Exam traps per topic</span></label>
+   <p class="muted" id="pc"></p>
+   <div class="row2"><button class="btn primary" id="doP">🖨 Print / Save as PDF</button><button class="btn ghost" id="doD">⬇️ Download (.html)</button></div></div>`;
+  let scope = "all";
+  const sel = () => {
+    const tops = $$("#ptop .chip.on").map(b => b.dataset.t);
+    const inScope = q => scope === "all" || (scope === "wrong" && p[q.id] && p[q.id].last === false) || (scope === "flag" && f[q.id]) || (scope === "wf" && ((p[q.id] && p[q.id].last === false) || f[q.id]));
+    return allQ().filter(q => tops.includes(q.topic) && ((q.options && $("#iM").checked) || (!q.options && $("#iS").checked)) && inScope(q)).map(q => q.id);
+  };
+  const upd = () => { $("#pc").textContent = sel().length + " questions selected."; };
+  $$("#scope .chip").forEach(b => b.onclick = () => { $$("#scope .chip").forEach(x => x.classList.remove("on")); b.classList.add("on"); scope = b.dataset.s; upd(); });
+  $$("#ptop .chip").forEach(b => b.onclick = () => { b.classList.toggle("on"); upd(); });
+  $$("input[type=checkbox]").forEach(c => c.onchange = upd); upd();
+  const title = () => ({ all: "All questions", wrong: "My wrong answers", flag: "My flagged questions", wf: "My wrong & flagged questions" }[scope]);
+  $("#doP").onclick = () => { const ids = sel(); if (!ids.length) return toast("Nothing selected"); doPrint(ids, title(), $("#iA").checked, $("#iT").checked); };
+  $("#doD").onclick = () => { const ids = sel(); if (!ids.length) return toast("Nothing selected"); download(`OPIM639_${title().replace(/\W+/g, "_")}.html`, "<!doctype html><meta charset='utf-8'><title>OPIM639 " + esc(title()) + "</title><style>body{font:15px/1.5 Arial,sans-serif;max-width:820px;margin:24px auto;padding:0 16px}h2{border-bottom:2px solid #333;margin-top:28px}.pq{border-bottom:1px solid #ddd;padding:8px 0 12px}.o{margin-left:18px}.a{margin-top:6px;padding:6px 10px;background:#eef7f2;border-left:3px solid #16956F}.w{font-size:13px;color:#444}.t{font-size:12px;color:#666}</style>" + printHTML(ids, title(), $("#iA").checked, $("#iT").checked), "text/html"); };
+}
+function printHTML(ids, title, answers = true, withTraps = false) {
+  const set = new Set(ids);
+  let h = `<h1>OPIM639 Exam Prep Quiz · ${esc(title)}</h1><div class="t">${esc(profile)} · printed ${new Date().toLocaleDateString()} · ${ids.length} questions</div>`;
+  QB.topics.forEach(t => {
+    const qs = allQ().filter(q => set.has(q.id) && q.topic === t.id); if (!qs.length) return;
+    h += `<h2>${t.id} · ${esc(t.name)}</h2>`;
+    if (withTraps) h += `<div class="pq"><b>⚠ Traps:</b> ${(QB.traps[t.id] || []).map(esc).join(" · ")}</div>`;
+    qs.forEach(q => {
+      h += `<div class="pq"><b>${esc(q.id)}${q.marks ? ` (${q.marks} marks)` : ""}.</b> ${esc(q.q)}`;
+      if (q.options) { h += q.options.map((o, k) => `<div class="o">${L[k]}. ${esc(o)}</div>`).join(""); if (answers) h += `<div class="a"><b>Answer ${L[q.answer]}.</b> ${esc(q.explanation)}<div class="w">${q.why_wrong.map((w, k) => w ? `✗ ${L[k]}: ${esc(w)}` : "").filter(Boolean).join("<br>")}</div></div>`; }
+      else if (answers) h += `<div class="a"><b>Model answer</b><ul>${q.model_answer.map(x => `<li>${esc(x)}</li>`).join("")}</ul><b>Marking:</b> ${q.marking.map(esc).join("; ")}</div>`;
+      else h += `<div style="height:110px"></div>`;
+      h += `</div>`;
+    });
+  });
+  return h;
+}
+function doPrint(ids, title, answers = true, withTraps = false) { $("#print").innerHTML = printHTML(ids, title, answers, withTraps); setTimeout(() => print(), 50); }
+function download(name, text, type) { const b = new Blob([text], { type }); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }
+
+
+/* ---------- shared helpers: calendar, reasons, drills record ---------- */
+const REASONS = [["misread", "👀 Misread the question"], ["unknown", "🤷 Didn't know it"], ["mixed", "🔀 Mixed up two ideas"], ["calc", "🧮 Calculation slip"], ["guess", "🎲 Guessed"], ["trap", "🪤 Fell for a trap"]];
+function calendar() {
+  const st = store.get("stats", { days: {} }), days = st.days || {}; let h = '<div class="cal">', streak = 0, today = new Date();
+  for (let i = 27; i >= 0; i--) { const d = new Date(today - i * DAY).toISOString().slice(0, 10), n = days[d] || 0; h += `<i class="${n >= 30 ? "l3" : n >= 10 ? "l2" : n ? "l1" : ""} ${i === 0 ? "today" : ""}" title="${d}: ${n} answers"></i>`; }
+  for (let i = 0; i < 60; i++) { const d = new Date(today - i * DAY).toISOString().slice(0, 10); if (days[d]) streak++; else if (i) break; }
+  return h + `</div><p class="muted" style="margin:8px 0 0">🔥 ${streak}-day study streak · darker = more questions answered that day</p>`;
+}
+function reasonSummary() {
+  const r = Object.values(store.get("reasons", {})); if (!r.length) return '<p class="muted">After a wrong answer, tap why you missed it. Your pattern will show here.</p>';
+  const c = {}; r.forEach(k => c[k] = (c[k] || 0) + 1); const top = Object.entries(c).sort((a, b) => b[1] - a[1]);
+  const advice = { misread: "Slow down: underline NOT / EXCEPT / BEST and re-read the stem before choosing.", unknown: "Content gap: use Flashcards and the Revise list for those topics.", mixed: "Make a 2-column 'A vs B' list on your A4 sheet (e.g. push vs pull, Q2 vs Q3).", calc: "Write the formula first, then numbers; re-check the last step. Use the drills.", guess: "Flag guesses so they come back, even if you got them right.", trap: "Read the Traps tab the night before the exam." };
+  return top.map(([k, n]) => `<div class="rev">${REASONS.find(x => x[0] === k)[1]} · <b>${n}</b></div>`).join("") + `<div class="tipcard">🎯 <b>Your #1 fix:</b> ${advice[top[0][0]]}</div>`;
+}
+function recordDrill(ok) { const st = store.get("stats", { streak: 0, best: 0, answered: 0, days: {} }); st.answered++; st.streak = ok ? st.streak + 1 : 0; st.best = Math.max(st.best, st.streak); const d = new Date().toISOString().slice(0, 10); st.days[d] = (st.days[d] || 0) + 1; store.set("stats", st); }
+
+/* ---------- daily 10 ---------- */
+function daily10() {
+  const p = progress(), due = new Set(dueIds("srs"));
+  const acc = {}; QB.topics.forEach(t => { const ids = QB.mcq.filter(q => q.topic === t.id); const seen = ids.filter(q => p[q.id]); acc[t.id] = seen.length ? seen.filter(q => p[q.id].last).length / seen.length : .5; });
+  const w = q => (p[q.id] && p[q.id].last && !due.has(q.id) ? .3 : 1) * (1 + 3 * (1 - acc[q.topic])) * (due.has(q.id) ? 3 : 1) * (p[q.id] ? 1 : 1.4);
+  const pool = QB.mcq.slice(), out = [];
+  while (out.length < 10 && pool.length) { const tot = pool.reduce((a, q) => a + w(q), 0); let r = Math.random() * tot, i = 0; while ((r -= w(pool[i])) > 0 && i < pool.length - 1) i++; out.push(pool.splice(i, 1)[0]); }
+  prefs.type = "mcq"; start(out, "practice"); toast("☀️ Daily 10: weighted to your weak topics");
+}
+
+/* ---------- calculation drills (fresh numbers every time) ---------- */
+const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const fx = (x, d = 2) => (+x.toFixed(d)).toString();
+function mkQ(topic, q, right, wrongs, explanation, src) {
+  const opts = [right, ...wrongs.filter((w, i, a) => w !== right && a.indexOf(w) === i)].slice(0, 4);
+  let pad = 2; while (opts.length < 4) { const c = String(+right.replace(/[^\d.]/g, "") + pad++ || rnd(2, 99)); if (!opts.includes(c)) opts.push(c); }
+  return { id: "D-" + Math.random().toString(36).slice(2, 7), drill: true, topic, difficulty: "M", kind: "calc", q, options: opts, answer: 0, explanation, why_wrong: ["", "", "", ""], source: src };
+}
+const DRILLS = {
+  bb() { // bucket brigade interval / throughput
+    const n = rnd(3, 4), v = Array.from({ length: n }, () => rnd(1, 6)).sort((a, b) => a - b), S = v.reduce((a, b) => a + b, 0), i = rnd(2, n), lo = v.slice(0, i - 1).reduce((a, b) => a + b, 0), hi = lo + v[i - 1];
+    if (Math.random() < .35) return mkQ("T6", `A bucket brigade has ${n} workers with speeds ${v.join(", ")} (ordered slowest → fastest). What is the throughput?`, `${S} jobs per unit time`, [`${fx(S / n)} jobs per unit time`, `${v[0]} jobs per unit time`, `${v[n - 1]} jobs per unit time`], `TH = sum of speeds = ${v.join(" + ")} = ${S}. Not the average (${fx(S / n)}) or the slowest worker (${v[0]}).`, "slides06 · drill");
+    return mkQ("T6", `Bucket brigade, speeds ${v.join(", ")} (slowest → fastest). Which interval of work content does worker ${i} repeat?`, `[${lo}/${S}, ${hi}/${S}]`, [`[${lo + 1}/${S}, ${hi + 1}/${S}]`, `[${lo}/${S + v[i - 1]}, ${hi}/${S + v[i - 1]}]`, `[${i - 1}/${n}, ${i}/${n}]`], `Worker i covers [(v₁+…+vᵢ₋₁)/Σv, (v₁+…+vᵢ)/Σv]. Σv = ${S}; sum before worker ${i} = ${lo}; including worker ${i} = ${hi}. So [${lo}/${S}, ${hi}/${S}] = [${fx(lo / S, 3)}, ${fx(hi / S, 3)}]. Equal shares (${i - 1}/${n}…) ignore speed.`, "slides06 · drill");
+  },
+  ne() { // network effects roots
+    const pairs = [[.1, .9], [.2, .8], [.3, .7], [.4, .6], [.15, .85], [.25, .75], [.35, .65], [.05, .95]];
+    if (Math.random() < .2) { const p = [.26, .3, .35, .5][rnd(0, 3)]; return mkQ("T8", `With r(x) = 1 − x and f(z) = z, the price is p* = ${p}. What are the equilibria?`, "Only z = 0 (the product fails)", [`z = 0, ${fx((1 - Math.sqrt(Math.abs(1 - 4 * p))) / 2)} and ${fx((1 + Math.sqrt(Math.abs(1 - 4 * p))) / 2)}`, `z = ${fx(1 - p)} only`, `z = 0.5 only`], `z(1 − z) peaks at 1/4. Since ${p} > 0.25, the price line never meets the curve, so only z = 0 survives.`, "slides08 · drill"); }
+    const [a, b] = pairs[rnd(0, pairs.length - 1)], p = +(a * b).toFixed(4);
+    if (Math.random() < .5) return mkQ("T8", `Network effects with r(x) = 1 − x, f(z) = z. Price p* = ${p}. What is the tipping point z′ (the unstable equilibrium)?`, `z′ = ${a}`, [`z′ = ${b}`, `z′ = ${fx(1 - p)}`, `z′ = 0.5`], `Solve z(1 − z) = ${p}: z = [1 ± √(1 − 4×${p})]/2 = ${a} or ${b}. The SMALL root ${a} is the unstable tipping point; ${b} is stable.`, "slides08 · drill");
+    return mkQ("T8", `Network effects with r(x) = 1 − x, f(z) = z. Price p* = ${p}. What is the STABLE high equilibrium z″?`, `z″ = ${b}`, [`z″ = ${a}`, `z″ = ${fx(1 - p)}`, `z″ = 1`], `Roots of z(1 − z) = ${p} are ${a} and ${b}. The large root ${b} is stable: between ${a} and ${b} users join until demand reaches ${b}.`, "slides08 · drill");
+  },
+  nx() { // no network effect
+    const p = rnd(5, 45) / 100; return mkQ("T8", `No network effects: r(x) = 1 − x and the price is ${p}. What fraction of consumers buy?`, `${fx(1 - p)}`, [`${p}`, `${fx(p * (1 - p), 4)}`, `0.5`], `Without network effects the equilibrium solves r(x*) = p*: 1 − x = ${p} → x* = ${fx(1 - p)}. Everyone from 0 to x* buys.`, "slides08 · drill");
+  },
+  price() { // price optimisation with linear demand
+    const a = rnd(60, 120), b = rnd(3, 9) / 10, c = rnd(20, 70), m = [.2, .3, .5][rnd(0, 2)], cap = Math.round(a / b * rnd(70, 95) / 100);
+    const x0 = a / (2 * b), floor = c * (1 + m), lo = Math.max(floor, 0), ans = x0 < lo ? lo : x0 > cap ? cap : x0;
+    const binds = x0 < lo ? "the margin floor binds" : x0 > cap ? "the competitor cap binds" : "no constraint binds (interior optimum)";
+    return mkQ("T3", `Demand Y = ${a} − ${b}X. Unit cost ${c}; margin on cost must be at least ${m * 100}%; price must not exceed the competitor's ${cap}. What is the revenue-maximising price?`, fx(ans), [fx(x0 === ans ? lo : x0), fx(cap === ans ? a / b : cap), fx(c)], `Unconstrained best X⁰ = a/(2b) = ${a}/(2×${b}) = ${fx(x0)}. Feasible range: ${fx(floor)} (= ${c}×${1 + m}) to ${cap}. Revenue falls away from X⁰, so pick the feasible price nearest X⁰ = ${fx(ans)}: ${binds}.`, "slides03 · drill");
+  },
+  ccc() {
+    const inv = rnd(10, 90), rec = rnd(0, 40), pay = rnd(20, 90), c = inv + rec - pay;
+    return mkQ("T1", `A retailer holds stock ${inv} days, collects from customers ${rec} days after sale and pays suppliers after ${pay} days. What is its cash conversion cycle?`, `${c} days`, [`${inv + rec + pay} days`, `${pay - inv - rec + (c === 0 ? 1 : 0)} days`, `${inv - rec} days`], `CCC = inventory days + receivable days − payable days = ${inv} + ${rec} − ${pay} = ${c}. Negative (like Amazon's −19) means customers' cash arrives before suppliers are paid.`, "slides01 · drill");
+  },
+  rev() {
+    const r = rnd(5, 25), p = rnd(10, 90), u = rnd(100, 900);
+    return mkQ("T2", `Under a consignment contract with revenue share r = ${r}%, a seller's item sells at $${p}. ${u} units sell. How much does the MANUFACTURER receive?`, `$${(100 - r) * p * u / 100}`, [`$${r * p * u / 100}`, `$${p * u}`, `$${(100 - r) * p / 100}`], `Each sale: retailer keeps r·p, manufacturer gets (1 − r)·p = ${(100 - r) / 100}×$${p}. Times ${u} units = $${(100 - r) * p * u / 100}. ($${r * p * u / 100} is the retailer's share.)`, "slides02 · drill");
+  },
+  links() { const n = rnd(4, 20); return mkQ("T8", `In a one-sided network (like phones), how many possible connections are there between ${n} users?`, `${n * (n - 1) / 2}`, [`${n * n}`, `${n * (n - 1)}`, `${n}`], `Links = n(n − 1)/2 = ${n}×${n - 1}/2 = ${n * (n - 1) / 2}. (2 phones = 1, 5 = 10, 12 = 66.)`, "slides08 · drill"); }
+};
+function drillMenu() {
+  S = null; $$("#tabs button").forEach(b => b.classList.remove("on"));
+  const types = [["mix", "🎲 Mixed (all types)"], ["bb", "T6 Bucket brigade"], ["ne", "T8 Network-effect equilibria"], ["nx", "T8 No network effect"], ["links", "T8 Links n(n−1)/2"], ["price", "T3 Price optimisation"], ["ccc", "T1 Cash conversion cycle"], ["rev", "T2 Revenue share"]];
+  $("#app").innerHTML = `<div class="card hero"><h2>🧮 Calculation drills</h2><div class="muted">Fresh numbers every time, so you can practise as much as you like. Options are shuffled. Calculator allowed!</div></div>
+   <div class="card"><h2>Pick a drill</h2><div class="chips">${types.map(([k, l], i) => `<button class="chip ${i ? "" : "on"}" data-d="${k}">${l}</button>`).join("")}</div>
+   <h3>How many?</h3><select id="dn">${[5, 10, 20].map(n => `<option ${n === 10 ? "selected" : ""}>${n}</option>`).join("")}</select>
+   <div class="row2"><button class="btn primary" id="dgo">Start drills ▶</button></div></div>`;
+  let k = "mix"; $$("[data-d]").forEach(b => b.onclick = () => { $$("[data-d]").forEach(x => x.classList.remove("on")); b.classList.add("on"); k = b.dataset.d; });
+  $("#dgo").onclick = () => { const keys = Object.keys(DRILLS), n = +$("#dn").value; const qs = Array.from({ length: n }, () => DRILLS[k === "mix" ? pick(keys) : k]()); const keep = prefs.shuffleOpts; prefs.shuffleOpts = true; prefs.type = "mcq"; start(qs, "practice"); prefs.shuffleOpts = keep; };
+}
+
+/* ---------- full mock paper ---------- */
+function mockIntro() {
+  S = null; $$("#tabs button").forEach(b => b.classList.remove("on"));
+  $("#app").innerHTML = `<div class="card hero"><h2>📝 Full mock paper</h2><div class="muted">Like the real exam: 2 hours, closed book (your A4 sheet + calculator).</div></div>
+   <div class="card"><h2>Paper format</h2><ul class="tight"><li><b>Part A:</b> 40 MCQs drawn evenly from all 9 topics (1 mark each). No feedback until the end.</li><li><b>Part B:</b> 3 short-answer questions (must-know). Type or hand-write your answer, then mark yourself against the rubric.</li><li>The timer covers both parts. Aim for about 70 minutes on Part A.</li></ul>
+   <div class="tipcard">💡 Do it in one sitting, phone on silent, A4 sheet beside you. It is the best rehearsal for 10 Nov.</div>
+   <div class="row2"><button class="btn primary" id="mgo">Start the 2-hour mock ⏱</button></div></div>`;
+  $("#mgo").onclick = () => {
+    const per = {}; QB.mcq.forEach(q => (per[q.topic] = per[q.topic] || []).push(q));
+    let mc = []; Object.values(per).forEach(a => mc.push(...shuffle(a).slice(0, 4))); mc = shuffle(mc.concat(shuffle(QB.mcq.filter(q => !mc.includes(q))).slice(0, 40 - mc.length)));
+    const sa = shuffle(QB.saq.filter(q => q.priority === "must")).slice(0, 3);
+    S = { qs: mc.map(q => Object.assign({}, q, { order: shuffle([0, 1, 2, 3]) })), saqs: sa, i: 0, mode: "mock", ans: {}, startT: Date.now(), streak: 0 };
+    const end = Date.now() + 120 * 60000; clearInterval(timerId);
+    timerId = setInterval(() => { const s = Math.max(0, Math.round((end - Date.now()) / 1000)); $("#hdr").textContent = "⏱ " + Math.floor(s / 3600) + ":" + String(Math.floor(s % 3600 / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); if (!s) mockFinish(); }, 500);
+    render();
+  };
+}
+function mockSaq(j = 0) {
+  S.j = j; const q = S.saqs[j], d = store.get("drafts", {});
+  $("#app").innerHTML = `<div class="card qcard"><div class="muted">Part B · Short question ${j + 1} of ${S.saqs.length}</div><div class="bar"><i style="width:${(j / S.saqs.length) * 100}%"></i></div>${metaTags(q)}<div class="qtext">${esc(q.q)}</div>
+   <textarea id="draft" style="min-height:200px" placeholder="Write your answer (or write on paper and just tap Next)…">${esc(d[q.id] || "")}</textarea>
+   <div class="row2"><button class="btn ghost" id="bk">◀ ${j ? "Back" : "Back to MCQs"}</button><button class="btn primary" id="nx">${j === S.saqs.length - 1 ? "Submit paper ✅" : "Next ▶"}</button></div></div>`;
+  bindFlag(q);
+  $("#draft").oninput = e => { const m = store.get("drafts", {}); m[q.id] = e.target.value; store.set("drafts", m); };
+  $("#bk").onclick = () => { if (j) mockSaq(j - 1); else { S.i = S.qs.length - 1; render(); } };
+  $("#nx").onclick = () => j === S.saqs.length - 1 ? mockFinish() : mockSaq(j + 1);
+}
+function marksOf(line) { const m = String(line).match(/([\d.]+)\s*marks?/i); return m ? +m[1] : 1; }
+function mockFinish() {
+  clearInterval(timerId); $("#hdr").textContent = "";
+  let ok = 0; S.qs.forEach(q => { const c = S.ans[q.id] === q.answer; if (c) ok++; record(q, c); });
+  const d = store.get("drafts", {});
+  $("#app").innerHTML = `<div class="card" style="text-align:center"><h2>Part A: ${ok} / ${S.qs.length}</h2><p class="muted">Now mark Part B honestly with the rubric. Tick each point your answer covers.</p></div>
+   ${S.saqs.map((q, j) => `<div class="card"><div class="muted">Short question ${j + 1} · ${q.marks} marks</div><b>${esc(q.q)}</b>
+    <details style="margin:8px 0"><summary>Your answer</summary><div class="muted" style="white-space:pre-wrap">${esc(d[q.id] || "(answered on paper)")}</div></details>
+    <div class="fb ok"><b>Model answer</b><ul class="tight">${q.model_answer.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+    <div class="fb tip"><b>Tick what you earned</b>${q.marking.map((m, k) => `<label class="ck"><input type="checkbox" data-q="${j}" data-m="${marksOf(m)}"><span>${esc(m)}</span></label>`).join("")}</div></div>`).join("")}
+   <div class="card"><button class="btn primary" style="width:100%" id="score">See my total score 🏁</button></div>`;
+  $("#score").onclick = () => {
+    const saN = S.saqs.reduce((a, q) => a + q.marks, 0); let sa = 0;
+    S.saqs.forEach((q, j) => { const got = $$(`input[data-q="${j}"]:checked`).reduce((a, c) => a + +c.dataset.m, 0); sa += Math.min(q.marks, got); });
+    const tot = ok + sa, max = S.qs.length + saN, pct = Math.round(tot / max * 100);
+    const mk = store.get("mocks", []); mk.push({ t: Date.now(), pct, mcq: ok, mcqN: S.qs.length, saq: sa, saqN: saN }); store.set("mocks", mk.slice(-20));
+    if (pct >= 75) confetti(220);
+    const byT = {}; S.qs.forEach(q => { byT[q.topic] = byT[q.topic] || [0, 0]; byT[q.topic][1]++; if (S.ans[q.id] === q.answer) byT[q.topic][0]++; });
+    $("#app").innerHTML = `<div class="card" style="text-align:center"><h2>Mock paper result ${pct >= 75 ? "🏆" : pct >= 60 ? "👏" : "💪"}</h2><div class="big">${pct}%</div><p>${fx(tot, 1)} / ${max} marks · MCQ ${ok}/${S.qs.length} · Short ${fx(sa, 1)}/${saN}</p>
+     <div class="fb ${pct >= 70 ? "ok" : "no"}" style="text-align:left"><b>By topic (MCQ):</b> ${Object.entries(byT).sort().map(([k, v]) => `${k} ${v[0]}/${v[1]}`).join(" · ")}</div>
+     <p class="muted">${esc(pick(QB.cheers.end))}</p><div class="row2"><button class="btn primary" id="h">Home</button><button class="btn ghost" id="rv">Review wrong MCQs</button></div></div>`;
+    $("#h").onclick = () => go("home"); $("#rv").onclick = () => go("revise");
+  };
+}
+
+/* ---------- flashcards ---------- */
+let CS = null;
+function cardsTab() {
+  const due = new Set(dueIds("csrs")), m = store.get("csrs", {});
+  const known = Object.values(m).filter(x => x.box >= 2).length;
+  $("#app").innerHTML = `<div class="card hero"><h2>🃏 Flashcards</h2><div class="muted">${QB.cards.length} cards of definitions, lists and key numbers. Tap a card to flip it. “Got it” cards come back later; “Again” cards come back tomorrow.</div>
+   <div class="count"><div><b>${known}</b>known</div><div><b>${due.size}</b>due</div><div><b>${QB.cards.length - Object.keys(m).length}</b>new</div></div></div>
+   <div class="card"><h2>Choose cards</h2><div class="chips" id="ct"><button class="chip on" data-t="all">All topics</button>${QB.topics.map(t => `<button class="chip" data-t="${t.id}">${t.id}</button>`).join("")}</div>
+   <div class="row2"><button class="btn primary" id="cgo">Study all ▶</button><button class="btn ghost" id="cdue" ${due.size ? "" : "disabled"}>🔁 Due only (${due.size})</button><button class="btn ghost" id="cnot">Not yet known</button></div></div>`;
+  let t = "all"; $$("#ct .chip").forEach(b => b.onclick = () => { $$("#ct .chip").forEach(x => x.classList.remove("on")); b.classList.add("on"); t = b.dataset.t; });
+  const sel = f => QB.cards.filter(c => (t === "all" || c.topic === t) && f(c));
+  $("#cgo").onclick = () => cardRun(shuffle(sel(() => true)));
+  $("#cdue").onclick = () => cardRun(shuffle(sel(c => due.has(c.id))));
+  $("#cnot").onclick = () => cardRun(shuffle(sel(c => !m[c.id] || m[c.id].box < 2)));
+}
+function cardRun(list) { if (!list.length) return toast("No cards here 🎉"); CS = { list, i: 0, got: 0 }; cardShow(); }
+function cardShow() {
+  const c = CS.list[CS.i];
+  $("#app").innerHTML = `<div class="card qcard"><div class="topline"><span class="muted">Card ${CS.i + 1} of ${CS.list.length}</span><span class="tag" style="color:${TCOL[c.topic]}">● ${c.topic} ${esc(topicName(c.topic))}</span></div><div class="bar"><i style="width:${CS.i / CS.list.length * 100}%"></i></div>
+   <div class="flip" id="fl"><div class="inner"><div class="face front">${esc(c.front)}<small>Tap to flip ↻</small></div><div class="face back">${esc(c.back)}</div></div></div>
+   <div class="row2"><button class="btn warn" id="again">↺ Again</button><button class="btn primary" id="got">✓ Got it</button></div><div class="kbd" style="margin-top:8px">Keys: Space = flip · 1 = again · 2 = got it</div></div>`;
+  $("#fl").onclick = () => $("#fl").classList.toggle("on");
+  const nx = ok => { srsUpdate(c.id, ok, "csrs"); recordDrill(ok); if (ok) { CS.got++; vibrate(15); } CS.i++; if (CS.i >= CS.list.length) { confetti(100); $("#app").innerHTML = `<div class="card" style="text-align:center"><h2>Deck done! 🎉</h2><div class="big">${CS.got} / ${CS.list.length}</div><p>${esc(pick(QB.cheers.end))}</p><div class="row2"><button class="btn primary" id="cb">More cards</button></div></div>`; $("#cb").onclick = () => go("cards"); CS = null; } else cardShow(); };
+  $("#again").onclick = () => nx(false); $("#got").onclick = () => nx(true);
+}
+addEventListener("keydown", e => { if (!CS || /INPUT|TEXTAREA/.test(document.activeElement.tagName)) return; if (e.key === " ") { e.preventDefault(); $("#fl") && $("#fl").classList.toggle("on"); } else if (e.key === "1") $("#again") && $("#again").click(); else if (e.key === "2") $("#got") && $("#got").click(); });
+
+/* ---------- PWA ---------- */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+
+/* ---------- PROFILE ---------- */
+function me() {
+  const p = progress(), st = store.get("stats", { streak: 0, best: 0, answered: 0, days: {} }), ex = store.get("exams", []);
+  const right = QB.mcq.filter(q => p[q.id] && p[q.id].last).length, tried = QB.mcq.filter(q => p[q.id]).length;
+  const days = Object.keys(st.days || {}).length;
+  $("#app").innerHTML = `<div class="card hero"><h2>👤 ${esc(profile)}</h2><div class="muted">Saved only on this device and browser.</div>
+   <div class="count"><div><b>${st.answered}</b>answers</div><div><b>${tried}</b>MCQs tried</div><div><b>${right}</b>right now</div><div><b>${days}</b>study days</div></div></div>
+   <div class="card"><h2>Your mistake pattern</h2>${reasonSummary()}</div>
+   <div class="card"><h2>Study streak</h2>${calendar()}</div>
+   <div class="card"><h2>Mock exam history</h2>${ex.length ? ex.slice().reverse().map(e => `<div class="rev">${new Date(e.t).toLocaleString()} · <b>${e.pct}%</b> (${e.ok}/${e.n})</div>`).join("") : '<p class="muted">No timed exams yet.</p>'}
+   ${store.get("mocks", []).slice().reverse().map(m => `<div class="rev">📝 Full mock · ${new Date(m.t).toLocaleString()} · <b>${m.pct}%</b> (MCQ ${m.mcq}/${m.mcqN}, short ${m.saq}/${m.saqN})</div>`).join("")}</div>
+   <div class="card"><h2>Back up or move your progress</h2><p class="muted">Progress lives in this browser. To move it to another phone or laptop, download a backup here and load it there.</p>
+    <div class="row2"><button class="btn ghost" id="bk">⬇️ Download backup</button><label class="btn ghost" style="text-align:center">⬆️ Load backup<input type="file" id="ld" accept=".json" hidden></label></div></div>
+   <div class="card"><h2>Switch person</h2><p class="muted">Sharing this device? Each name keeps its own progress.</p>
+    <div class="chips">${profiles().map(n => `<button class="chip ${n === profile ? "on" : ""}" data-p="${esc(n)}">${esc(n)}</button>`).join("")}</div>
+    <div class="row2"><input type="text" id="nn" placeholder="New name" maxlength="30"><button class="btn ghost" id="add">Add & switch</button></div>
+    <div class="row2"><button class="btn warn" id="reset">Reset ${esc(profile)}'s progress</button></div></div>`;
+  $("#bk").onclick = () => { const keys = ["progress", "flags", "drafts", "stats", "exams", "prefs", "srs", "csrs", "reasons", "mocks"]; download(`OPIM639_backup_${profile}.json`, JSON.stringify({ app: "opim639", profile, at: Date.now(), data: Object.fromEntries(keys.map(k => [k, store.get(k, null)])) }), "application/json"); };
+  $("#ld").onchange = e => { const f = e.target.files[0]; if (!f) return; f.text().then(t => { try { const b = JSON.parse(t); if (b.app !== "opim639") throw 0; Object.entries(b.data).forEach(([k, v]) => v !== null && store.set(k, v)); toast("Backup loaded ✅"); prefs = loadPrefs(); me(); } catch (_) { toast("That file is not an OPIM639 backup"); } }); };
+  $$("[data-p]").forEach(b => b.onclick = () => { setProfile(b.dataset.p); go("me"); toast("Switched to " + b.dataset.p); });
+  $("#add").onclick = () => { const n = $("#nn").value.trim(); if (!n) return; setProfile(n); if (!prefs.topics) prefs.topics = QB.topics.map(t => t.id); go("home"); };
+  $("#reset").onclick = e => { const b = e.target; if (!b.dataset.armed) { b.dataset.armed = 1; b.textContent = "Tap again to confirm"; return; } ["progress", "flags", "drafts", "srs", "csrs", "reasons"].forEach(k => store.set(k, {})); store.set("exams", []); store.set("mocks", []); store.set("stats", { streak: 0, best: 0, answered: 0, days: {} }); toast("Progress reset"); me(); };
 }
 </script>
 </body>

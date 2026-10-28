@@ -227,22 +227,22 @@
    "difficulty": "M",
    "priority": "should",
    "kind": "apply",
-   "q": "Why does the course stress that an online retailer's technology development cost is largely a FIXED cost?",
+   "q": "Prof Lim asks: 'Is technology a fixed cost or a variable cost?' What was the answer given in class, and why?",
    "options": [
-    "Its cost per order falls as volume grows, so scale matters a lot online",
-    "It rises in direct proportion to the number of orders that are shipped",
-    "It can be avoided completely by outsourcing the website to a marketplace",
-    "It is only paid once, at launch, and then never needs to be spent again"
+    "Variable: tech spending never stops; it keeps growing with more suppliers, price updates, tracking and new security threats",
+    "Fixed: it is paid once at launch, so the cost per order falls to zero as volume grows",
+    "Neither: online retailers can avoid technology cost by listing on a marketplace",
+    "Fixed: it rises in exact proportion to the number of parcels shipped"
    ],
    "answer": 0,
-   "explanation": "Technology (supplier links, tracking, security) costs about the same whether you ship 1,000 or 1 million orders. So the cost per order falls with volume, which is why large players like Amazon gain an edge and small online retailers struggle.",
+   "explanation": "Your class note on Topic 1, slide 19 records the answer 'Tech is variable cost'. The slide lists why: an online retailer must keep investing in software to link a growing variety of suppliers, constantly update prices and shipping options, track products and shipments, and buy the latest security. The spending grows with the business, so it is not a one-off fixed investment.",
    "why_wrong": [
     "",
-    "That describes a variable cost, the opposite of a fixed cost.",
-    "Outsourcing (like Borders did) shifts the cost; it does not make technology free, and it gives up control.",
-    "Fixed does not mean one-off; systems for supplier links, tracking and security need ongoing spending."
+    "Technology is not paid once; the slide stresses continuous updates and new security.",
+    "Even marketplace sellers face tech and fees; and the slide is about the online retailer's own costs.",
+    "Rising in exact proportion to parcels is not the reason given, and calling it 'fixed' contradicts the class answer."
    ],
-   "source": "slides01 / Ch 1 (disadvantage 3)",
+   "source": "slides01 · slide 19 + class note",
    "topic": "T1"
   },
   {
@@ -382,6 +382,102 @@
    ],
    "source": "Wharton case: Online Book Retailing",
    "topic": "T1"
+  },
+  {
+   "id": "T1-V1",
+   "topic": "T1",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's cash cycle chart for Amazon (2007) is a timeline: a book enters inventory on day 0, the customer pays by card at about day 28–31, and Amazon pays the supplier on day 50. What does this chart show?",
+   "options": [
+    "Amazon pays the supplier about 19 days before the customer pays, so it must borrow to fund its stock",
+    "Amazon holds each book for about 50 days before any customer buys it",
+    "Amazon collects the customer's cash about 19 days before it pays the supplier, so customers' money funds the business",
+    "Amazon's cash cycle is +78 days, the same as a typical book retailer's"
+   ],
+   "answer": 2,
+   "explanation": "Cash comes in from the customer at about day 31 and goes out to the supplier at day 50, so Amazon holds the cash for about 19 days first. This is the −19-day cash conversion cycle: high inventory turns plus card payment up front mean customers' money funds the business.",
+   "why_wrong": [
+    "The order is reversed: the customer pays first (about day 31), the supplier later (day 50).",
+    "Day 50 is when the supplier is paid, not how long the book sits; the customer pays around day 28–31.",
+    "",
+    "+78 days is the typical book retailer (supplier paid day 90, customer pays day 168), not Amazon."
+   ],
+   "source": "slides01 · slide 9 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T1-V2",
+   "topic": "T1",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "recall",
+   "q": "A bar chart in Prof Lim's Topic 1 slides shows Amazon's fulfilment plus shipping cost as a share of net sales from 2009 to 2021. What does the chart show?",
+   "options": [
+    "The share roughly doubled, from about 16% to about 32% of net sales",
+    "The share fell steadily as Amazon grew, from about 32% to about 16%",
+    "The share stayed flat at about 5%, because robots offset the rising volume",
+    "The share rose only slightly, from about 10% to about 12%"
+   ],
+   "answer": 0,
+   "explanation": "The chart shows logistics cost rising from about 15.6% to 32.3% of net sales between 2009 and 2021. This is the course's key point: going online moves cost from stores into picking and delivery, and that cost line keeps climbing as volume and free fast shipping grow.",
+   "why_wrong": [
+    "",
+    "The direction is wrong: the share rose, it did not fall.",
+    "The share was never near 5% and did not stay flat.",
+    "The rise was large (about 16% to 32%), not a small 2-point change."
+   ],
+   "source": "slides01 · slide 4 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T1-V3",
+   "topic": "T1",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Prof Lim shows a US map with Amazon's fulfilment centres (FCs) plotted over population density. What point does the class note make about this map?",
+   "options": [
+    "FCs are spread evenly by land area so that every state gets one",
+    "FCs are built next to suppliers' factories to cut inbound shipping",
+    "FCs sit only in states with no sales tax, whatever the population there",
+    "How closely FC locations match population density is a fulfilment KPI: closer means faster, cheaper delivery"
+   ],
+   "answer": 3,
+   "explanation": "The class note on slide 14 says the correlation between warehouse locations and population density is a fulfilment KPI. FCs follow where customers live, which cuts delivery time and outbound shipping cost. 'Convenient' states (tax) also matter, but population is the driver shown on the map.",
+   "why_wrong": [
+    "The map follows population, not land area; empty states do not get FCs.",
+    "The map links FCs to customers (outbound), not to suppliers' factories.",
+    "Tax is one reason for choosing a state, but the map's point is population density, not tax alone.",
+    ""
+   ],
+   "source": "slides01 · slide 14 (figure + class note)",
+   "visual": true
+  },
+  {
+   "id": "T1-V4",
+   "topic": "T1",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim asked in class: 'Amazon carries less inventory than a store chain, but it still holds some. Why? And why run several fulfilment centres instead of one?' Which answer is best?",
+   "options": [
+    "Drop-shipping is faster and cheaper at scale, so own stock is only kept for tax reasons",
+    "Own stock gives speed and service control that drop-shipping cannot give at scale; several FCs near customers cut delivery time and outbound shipping and add capacity",
+    "Suppliers refuse to drop-ship, and one FC would be too small to pool safety stock",
+    "Several FCs reduce total inventory, because every extra stocking point lowers safety stock"
+   ],
+   "answer": 1,
+   "explanation": "Drop-shipping is too slow and unreliable at scale, so Amazon keeps its own (pooled) stock to control speed and service. Several FCs close to customers mean faster delivery, lower outbound shipping, more capacity and tax/location benefits.",
+   "why_wrong": [
+    "Drop-shipping is the slow, less reliable option at scale; that is why Amazon holds stock.",
+    "",
+    "Fewer FCs pool safety stock better; the reason for several FCs is speed and shipping cost, not supplier refusal.",
+    "More stocking points mean MORE inventory (one reason Amazon closed McDonough in 2001), not less."
+   ],
+   "source": "slides01 · slide 8 (in-lecture question)",
+   "visual": true
   },
   {
    "id": "T2-01",
@@ -729,6 +825,102 @@
    "topic": "T2"
   },
   {
+   "id": "T2-V1",
+   "topic": "T2",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's Sell on Amazon (SoA) diagram shows three flows between customer, marketplace and seller: information (dashed), material (red) and money (dotted). Which flow does NOT pass through the marketplace under SoA?",
+   "options": [
+    "Information flow: the seller receives orders directly from the customer",
+    "Financial flow: the customer pays the seller directly",
+    "Material flow: the seller ships the product straight to the customer, so the marketplace never sees it",
+    "All three flows pass through the marketplace; only FBA bypasses it"
+   ],
+   "answer": 2,
+   "explanation": "Under SoA the marketplace notifies the seller of the order (information) and collects payment, paying the seller minus commission (money). But the seller stores and ships the goods itself, so the red material flow goes seller → customer and the marketplace never sees the product.",
+   "why_wrong": [
+    "Orders come through the marketplace, which notifies the seller.",
+    "The customer pays the marketplace, which pays the seller minus commission.",
+    "",
+    "It is the other way round: under FBA all three flows pass through the marketplace; under SoA the material flow does not."
+   ],
+   "source": "slides02 · slide 6 (figure + class note)",
+   "visual": true
+  },
+  {
+   "id": "T2-V2",
+   "topic": "T2",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "recall",
+   "q": "Prof Lim's FBA diagram shows the seller shipping stock into Amazon's warehouse before any order arrives. The class note adds that the contract typically lasts about 6 months. Which statement is correct?",
+   "options": [
+    "The seller still owns the stock in Amazon's warehouse until it sells, like consignment; Prof Lim's single-period model is about one such 6-month contract",
+    "Amazon buys the stock when it arrives and pays the seller at the end of the 6 months",
+    "Ownership passes to Amazon after 6 months if the stock has not sold",
+    "The seller owns the stock, but the 6-month contract means the model has many periods"
+   ],
+   "answer": 0,
+   "explanation": "Class notes: FBA contracts typically run about 6 months and the seller still owns the inventory, which is similar to consignment. Prof Lim's model is a single-period problem, which matches one such contract.",
+   "why_wrong": [
+    "",
+    "Amazon does not buy the stock; it charges only when a unit sells.",
+    "Unsold units are returned to the seller after a period; Amazon does not take ownership.",
+    "The model is single-period; one period ≈ one 6-month contract."
+   ],
+   "source": "slides02 · slides 15, 21–22 (figure + class notes)",
+   "visual": true
+  },
+  {
+   "id": "T2-V3",
+   "topic": "T2",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "apply",
+   "q": "In Prof Lim's long-tail chart, a tall red 'head' on the left drops into a long, low yellow 'tail' to the right. What is on the horizontal axis, and which part does the retailer hand to third-party sellers?",
+   "options": [
+    "Time; the red head of early sales",
+    "Price; the yellow tail of cheap items",
+    "Products/SKUs ranked by sales; the red head of best sellers",
+    "Products/SKUs ranked by sales; the yellow tail of slow movers"
+   ],
+   "answer": 3,
+   "explanation": "The class note says the horizontal axis is products (SKUs). The red head is the few best sellers the retailer stocks itself; the long yellow tail is the many slow movers that it outsources to third-party sellers, giving a one-stop shop without owning all the stock.",
+   "why_wrong": [
+    "The axis is products, not time.",
+    "The axis is products, not price; the tail is low-demand items, not cheap ones.",
+    "The retailer keeps the best sellers (red head) for itself.",
+    ""
+   ],
+   "source": "slides02 · slide 8 (figure + class note)",
+   "visual": true
+  },
+  {
+   "id": "T2-V4",
+   "topic": "T2",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Prof Lim's chart plots the retailer's and the manufacturers' expected profits against warehouse capacity V. His handwritten note mentions a 'saturation point'. What does the chart show?",
+   "options": [
+    "Both profits keep rising in a straight line with no limit",
+    "Both profits rise as V grows, then level off once more space no longer brings more sales because customers will not buy more",
+    "The retailer's profit rises while the manufacturers' profit falls, until saturation",
+    "Both profits fall after the saturation point because storage fees rise"
+   ],
+   "answer": 1,
+   "explanation": "Expanding capacity is a win-win: with more space Amazon can serve more sellers, so both sides' profits rise. But there is a saturation point where customers will not buy more, so the gains flatten out.",
+   "why_wrong": [
+    "The note on saturation means the gains do not go on forever.",
+    "",
+    "Both sides gain; it is not a trade-off between retailer and makers.",
+    "The curves flatten at saturation; they do not turn down."
+   ],
+   "source": "slides02 · slide 27 (figure + handwritten note)",
+   "visual": true
+  },
+  {
    "id": "T3-01",
    "difficulty": "E",
    "priority": "should",
@@ -1072,6 +1264,102 @@
    ],
    "source": "Flashion case / slides03",
    "topic": "T3"
+  },
+  {
+   "id": "T3-V1",
+   "topic": "T3",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "recall",
+   "q": "Prof Lim's flowchart of a flash-sale business runs: procurement → event planning → event sales. What happens to units still unsold when an event ends?",
+   "options": [
+    "They are marked down during the same event until they sell out",
+    "They go into a later event, so only the first event is a 'first exposure' for that style",
+    "They are always returned to the supplier for a full refund",
+    "They are moved to the retailer's physical outlet stores"
+   ],
+   "answer": 1,
+   "explanation": "The flowchart shows leftover stock flowing back into a later event. The first time a style appears is its 'first exposure', which earns most revenue and is where the pricing problem sits.",
+   "why_wrong": [
+    "Price is fixed during an event; there are no mid-event markdowns.",
+    "",
+    "The flowchart sends leftovers to a later event, not back to the supplier.",
+    "Flash-sale sites are online; the chart shows no outlet stores."
+   ],
+   "source": "slides03 · slide 11 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T3-V2",
+   "topic": "T3",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's histogram shows the % of stock sold for first-exposure styles. Suppose a style falls in the left-most bar (less than 25% of its units sold). What does the chart suggest about this style?",
+   "options": [
+    "Its price was probably too low, so revenue was left on the table",
+    "Its true demand is hidden because it sold out early",
+    "It met the buyers' 80% sell-through target",
+    "Its price was probably too high, leaving most units unsold"
+   ],
+   "answer": 3,
+   "explanation": "Prof Lim reads the chart both ways: the tall 'sold out' bar suggests prices too LOW, while the bars at 0–25% sold suggest prices too HIGH. A style that sold under a quarter of its stock most likely had a price above what customers would pay.",
+   "why_wrong": [
+    "'Too low' is the reading for the sold-out bar on the right, not the left-most bar.",
+    "Hidden (censored) demand applies to styles that SOLD OUT, not ones that sold under 25%.",
+    "Under 25% sold is far below an 80% target.",
+    ""
+   ],
+   "source": "slides03 · slide 15 (figure + in-lecture question)",
+   "visual": true
+  },
+  {
+   "id": "T3-V3",
+   "topic": "T3",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's R output for lm(demand ~ price) gives intercept 70.50719, price coefficient −0.60658 (marked with three stars) and R² ≈ 0.84. Which reading is correct?",
+   "options": [
+    "Each extra $1 in price loses about 0.61 units of demand, and price alone explains about 84% of the variation in demand",
+    "Each extra $1 in price adds about 0.61 units, and the model is correct 84% of the time",
+    "The best price is $70.51, and 84% of styles will sell out",
+    "Demand falls by 60.7% for each extra $1, and price explains only 16% of the variation"
+   ],
+   "answer": 0,
+   "explanation": "The line is Y = 70.50719 − 0.60658X: b is negative, so each $1 rise loses about 0.6 units. R² ≈ 0.84 means price explains about 84% of the variation in demand, and the three stars show the price effect is highly significant.",
+   "why_wrong": [
+    "",
+    "The coefficient is negative (demand falls), and R² is not a 'percent correct'.",
+    "70.51 is the intercept (demand at price 0), not a price; R² says nothing about sell-outs.",
+    "The slope is 0.61 units per $1, not 60.7%; R² 0.84 means 84% explained, not 16%."
+   ],
+   "source": "slides03 · slide 28 (figure: R output)",
+   "visual": true
+  },
+  {
+   "id": "T3-V4",
+   "topic": "T3",
+   "difficulty": "M",
+   "priority": "nice",
+   "kind": "apply",
+   "q": "Prof Lim asks: 'Which AI technology will have the biggest impact in the next 10–20 years, and why?' There is no single right answer. Which approach earns the most marks?",
+   "options": [
+    "List as many AI technologies as possible without choosing one, to show breadth",
+    "Pick rule-based AI, since it is simple and easy to explain to managers",
+    "Choose one technology, justify it by scale, data and how many people it touches, give a course example, and note one risk and one alternative",
+    "Argue that the question cannot be answered because the future is uncertain"
+   ],
+   "answer": 2,
+   "explanation": "Marks come from a clear choice, a reason tied to data and computing power ('data is the oil'), a course example (e.g. robots in T6, last mile in T7, Flashion pricing) and a fair risk plus an alternative.",
+   "why_wrong": [
+    "A list with no choice and no reasoning does not answer 'which' and 'why'.",
+    "Rule-based AI breaks down as problems get complex; the course stresses data-driven neural networks.",
+    "",
+    "Refusing to choose earns no marks; the question asks for a reasoned view."
+   ],
+   "source": "slides03 · slide 32 (discussion question)",
+   "visual": true
   },
   {
    "id": "T4-01",
@@ -1419,6 +1707,102 @@
    "topic": "T4"
   },
   {
+   "id": "T4-V1",
+   "topic": "T4",
+   "difficulty": "E",
+   "priority": "must",
+   "kind": "apply",
+   "q": "In Prof Lim's figure, one warehouse is marked red 'out of stock', and red arrows run from other warehouses to the zone it normally serves. What does this figure show?",
+   "options": [
+    "Drop-shipping: the supplier ships straight to the customer",
+    "Transshipment: stock is moved between warehouses before demand is known",
+    "Backlogging: the zone waits until the red warehouse is restocked",
+    "Fulfilment flexibility: any warehouse holding the item can serve the zone, which online retailers have and B&M does not"
+   ],
+   "answer": 3,
+   "explanation": "Slide 14 shows fulfilment flexibility: if one warehouse is out, another warehouse that holds stock ships to the zone. It raises service level but can raise outbound shipping cost and links replenishment, allocation and fulfilment together.",
+   "why_wrong": [
+    "The arrows start at other warehouses, not at the supplier.",
+    "The arrows go from warehouses to the customer zone, not between warehouses.",
+    "The point is that the zone does NOT have to wait; another warehouse serves it.",
+    ""
+   ],
+   "source": "slides04 · slide 14 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T4-V2",
+   "topic": "T4",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's network diagram (suppliers → regional warehouses → sortation centres → consumers) has a dotted push-pull boundary. Where does it sit, and what does it divide?",
+   "options": [
+    "At the warehouses: stock is pushed up to them before demand is known (replenish, allocate), then pulled out after orders arrive (fulfil)",
+    "At the suppliers: everything after the supplier is pulled by customer orders",
+    "At the sortation centres: allocation to sortation centres is the pull decision",
+    "At the customer's door: every decision, including fulfilment, is made before demand is known"
+   ],
+   "answer": 0,
+   "explanation": "The boundary sits at the warehouses. Replenishment and allocation are anticipative (push), made before demand is known; fulfilment (which FC ships) is reactive (pull), made after demand is realised.",
+   "why_wrong": [
+    "",
+    "Replenishment and allocation are push decisions, so the boundary is not at the suppliers.",
+    "Allocation is to FCs/warehouses and is a PUSH decision.",
+    "Fulfilment is made after demand is known, so not everything is push."
+   ],
+   "source": "slides04 · slides 18–19 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T4-V3",
+   "topic": "T4",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "recall",
+   "q": "On the JRAF model slide, next to the variables x, v, w and y there is a variable δ that can only be 0 or 1. What does it do?",
+   "options": [
+    "It marks whether an order is drop-shipped from 'FC J+1'",
+    "It records whether customer demand in a zone was met in full",
+    "It is a yes/no switch for placing an order with a supplier, so the fixed setup cost is paid only when δ = 1",
+    "It sets the share of each FC's capacity that may be used"
+   ],
+   "answer": 2,
+   "explanation": "δ is the order on/off switch: x ≤ x̄·δ, so δ = 0 forces x = 0 (no order) and δ = 1 allows an order up to the cap. The fixed setup cost S·δ in the production cost is paid only when an order is placed.",
+   "why_wrong": [
+    "Drop-shipping is modelled as an extra facility J+1, not by δ.",
+    "Demand must always be met in full (a constraint), not tracked by δ.",
+    "",
+    "Warehouse capacity is a separate constraint; δ is not a capacity share."
+   ],
+   "source": "slides04 · slides 21–24 (model + class notes)",
+   "visual": true
+  },
+  {
+   "id": "T4-V4",
+   "topic": "T4",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "recall",
+   "q": "In the JRAF model, which variable is the FULFILMENT decision, i.e. how much to ship from FC j to customer zone k?",
+   "options": [
+    "x",
+    "w",
+    "v",
+    "y"
+   ],
+   "answer": 1,
+   "explanation": "In the JRAF model x = replenishment (order from supplier), v = allocation (supplier to FC), w = fulfilment (FC j to zone k) and y = inventory level.",
+   "why_wrong": [
+    "x is the replenishment quantity ordered from a supplier.",
+    "",
+    "v is the allocation of received stock to each FC.",
+    "y is the inventory level held at an FC."
+   ],
+   "source": "slides04 · slide 21 (model + class notes)",
+   "visual": true
+  },
+  {
    "id": "T5-01",
    "difficulty": "E",
    "priority": "must",
@@ -1762,6 +2146,102 @@
    ],
    "source": "Group 1 Wk4 submission",
    "topic": "T5"
+  },
+  {
+   "id": "T5-V1",
+   "topic": "T5",
+   "difficulty": "E",
+   "priority": "must",
+   "kind": "apply",
+   "q": "A photo shows rows of shallow shelves holding many small bins of different items. Workers pick and restock from the same front face. Which equipment is this, and what is it for?",
+   "options": [
+    "Bin-shelving: piece picking of slow-moving SKUs",
+    "Gravity flow rack: piece picking of fast-moving SKUs",
+    "Pallet flow rack: case picking of high-throughput SKUs",
+    "Single-deep rack: storing full pallets"
+   ],
+   "answer": 0,
+   "explanation": "Bin-shelving is shallow and is picked and restocked from the same face, so restocking interrupts picking. That suits many slow-moving piece SKUs (the long tail), not fast movers.",
+   "why_wrong": [
+    "",
+    "Gravity flow racks are deep and tilted and restocked from the BACK.",
+    "Pallet flow racks are tilted with rollers, hold cases, and restock from another aisle.",
+    "Single-deep racks hold whole pallets, not small bins."
+   ],
+   "source": "slides05 · slide 14 (photo)",
+   "visual": true
+  },
+  {
+   "id": "T5-V2",
+   "topic": "T5",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "A rack has deep, tilted shelves. Only one case of each SKU sits on the pick face, lights show the picker which slot to pick from, and new cases are loaded from the back. Which demand type and SKU speed is it for?",
+   "options": [
+    "Pallet demand, slow movers",
+    "Case demand, slow movers",
+    "Piece demand, fast movers",
+    "Piece demand, slow movers"
+   ],
+   "answer": 2,
+   "explanation": "This is a gravity flow rack: deep and tilted, one case on the face, restocked from the back so picking is never interrupted, often with pick-to-light. Workers pick single pieces from the open case, so it suits fast-moving piece SKUs.",
+   "why_wrong": [
+    "Pallets go on single-deep racks; this rack holds cases that pieces are picked from.",
+    "Case picking uses pallet flow racks, and back-restocking is for fast, not slow, movers.",
+    "",
+    "Slow piece movers go on bin-shelving; back-restocking and pick-to-light are for fast movers."
+   ],
+   "source": "slides05 · slide 15 (photo)",
+   "visual": true
+  },
+  {
+   "id": "T5-V3",
+   "topic": "T5",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "apply",
+   "q": "A photo shows an ordinary forklift with a heavy weight at the back that balances the load on its forks. It needs fairly wide aisles. Which equipment is this, and which unit does it move?",
+   "options": [
+    "Order-picker truck; cases",
+    "Turret truck; pieces in very narrow aisles",
+    "AS/RS crane; bins of pieces",
+    "Counterbalance lift truck; pallets"
+   ],
+   "answer": 3,
+   "explanation": "A counterbalance lift truck is the standard forklift: a counterweight at the back balances the pallet on the forks. It moves pallets and needs wider aisles than a turret truck.",
+   "why_wrong": [
+    "An order-picker truck lifts the worker on a platform to pick cases.",
+    "A turret truck has a head that turns 90° for very narrow (5–7 ft) aisles, and it moves pallets, not pieces.",
+    "An AS/RS is an automated rack crane, not a driven forklift.",
+    ""
+   ],
+   "source": "slides05 · slide 19 (photo)",
+   "visual": true
+  },
+  {
+   "id": "T5-V4",
+   "topic": "T5",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "recall",
+   "q": "In Prof Lim's photo of a Kiva (Amazon Robotics) warehouse, small square codes are stuck on the floor in a grid. What are they for?",
+   "options": [
+    "Pickers scan them to confirm each item they pick",
+    "The robots scan them to know where they are as they drive around",
+    "They mark the pick-to-light slots on gravity flow racks",
+    "They show where the AutoStore grid's bins are stacked"
+   ],
+   "answer": 1,
+   "explanation": "The class note on slide 48 says QR codes are stuck on the floor and the robots scan them to update their location. Kiva drive units then lift shelf pods and bring them to the picker.",
+   "why_wrong": [
+    "Pickers scan items at the station; the floor codes are for robot navigation.",
+    "",
+    "Pick-to-light is on the racks, not codes on the floor.",
+    "AutoStore robots run on rails on top of a grid; this is a Kiva floor."
+   ],
+   "source": "slides06 · slide 48 (photo + class note)",
+   "visual": true
   },
   {
    "id": "T6-01",
@@ -2109,6 +2589,102 @@
    "topic": "T6"
   },
   {
+   "id": "T6-V1",
+   "topic": "T6",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Prof Lim's fast-pick diagram runs: reserve storage → restock → fast-pick area → inexpensive picks. If a manager makes the fast-pick area SMALLER, what is the main trade-off?",
+   "options": [
+    "Travel per pick rises, but restocking from reserve is needed less often",
+    "Both travel and restocking fall, so smaller is always better",
+    "Travel per pick falls, but the area must be restocked from reserve more often",
+    "More SKUs fit in the area, so fewer orders need the reserve"
+   ],
+   "answer": 2,
+   "explanation": "A smaller fast-pick area packs items closer, so pickers walk less, but it holds less of each SKU and must be restocked more often. A bigger area holds more and needs less restocking. The best size balances pick savings against restocking work.",
+   "why_wrong": [
+    "That is the effect of making the area BIGGER, not smaller.",
+    "Restocking goes up when the area shrinks, so there is a trade-off.",
+    "",
+    "A smaller area holds FEWER SKUs and less stock."
+   ],
+   "source": "slides06 · slides 10, 12 (figure + class notes)",
+   "visual": true
+  },
+  {
+   "id": "T6-V2",
+   "topic": "T6",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "In Prof Lim's zone-picking picture, each worker owns a fixed zone. Orders pile up in front of one worker while the worker downstream stands idle. What is the root cause?",
+   "options": [
+    "A static zone assignment is used in a changing system, so work-in-process builds in front of the slowest worker",
+    "Workers walk back too slowly after handing off their jobs",
+    "The workers are ordered from fastest to slowest along the line",
+    "The fast-pick area is too far from the shipping department"
+   ],
+   "answer": 0,
+   "explanation": "Work content varies by order, but fixed zones balance only on average. So WIP builds in front of the slowest worker and the next one waits. Cross-training and then the bucket brigade rule fix this.",
+   "why_wrong": [
+    "",
+    "Walking back is part of bucket brigades, not fixed zone picking.",
+    "Worker order by speed matters for bucket brigades; fixed zones fail whatever the order.",
+    "The picture is about workload balance between zones, not the area's location."
+   ],
+   "source": "slides06 · slides 15, 34 (figure + class notes)",
+   "visual": true
+  },
+  {
+   "id": "T6-V3",
+   "topic": "T6",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's time–work chart for a bucket brigade (workers ordered slowest to fastest) shows the hand-off points moving at first and then settling at fixed spots. What does this show?",
+   "options": [
+    "The line needs a supervisor to set zone boundaries from time studies",
+    "The line balances itself: each worker keeps repeating the same stretch of work and no one waits (repetition and efficiency)",
+    "The line only balances if all workers have the same speed",
+    "Work-in-process builds up at the fixed hand-off points"
+   ],
+   "answer": 1,
+   "explanation": "When workers are ordered slowest to fastest, hand-off points converge to fixed spots, so the line self-balances. Prof Lim's note: it is balanced because, in the long run, both the repetition and the efficiency conditions are met.",
+   "why_wrong": [
+    "Self-balancing means no supervisor or time study is needed.",
+    "",
+    "Speeds differ; faster workers simply get larger shares of the work.",
+    "Bucket brigades are pure pull, so WIP stays under control."
+   ],
+   "source": "slides06 · slide 31 (figure + class note)",
+   "visual": true
+  },
+  {
+   "id": "T6-V4",
+   "topic": "T6",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "In Prof Lim's routing figure, the picker enters each aisle that has a pick from the FRONT cross-aisle, walks as far as the last pick in that aisle, then comes back out the same front end. Aisles with no picks are skipped. Which heuristic is this?",
+   "options": [
+    "S-shape",
+    "Mid-point",
+    "Largest gap",
+    "Return"
+   ],
+   "answer": 3,
+   "explanation": "The return heuristic enters and leaves each aisle with picks from the same end. S-shape walks right through each aisle; mid-point and largest gap use both the front and back cross-aisles.",
+   "why_wrong": [
+    "S-shape fully traverses each aisle with a pick, coming out the other end.",
+    "Mid-point picks the back half of aisles from the back cross-aisle.",
+    "Largest gap enters from both ends up to the largest gap.",
+    ""
+   ],
+   "source": "slides06 · slide 47 (figure)",
+   "visual": true
+  },
+  {
    "id": "T7-01",
    "difficulty": "E",
    "priority": "must",
@@ -2452,6 +3028,102 @@
    ],
    "source": "Week 6/7 Robots vs Uberization discussion",
    "topic": "T7"
+  },
+  {
+   "id": "T7-V1",
+   "topic": "T7",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Prof Lim's meal-platform chronicle shows two orders, A and B, each with a required time of 11:30. Order A is delivered at 11:25 and order B at 11:35. Which reading is correct?",
+   "options": [
+    "Both orders are on time, because each is within 10 minutes of 11:30",
+    "A is 5 minutes early and B is 5 minutes late; the platform sets the required time and assigns the drivers",
+    "A is late and B is early, because B was dispatched after A",
+    "Both are late, because the required time counts from when the order was placed"
+   ],
+   "answer": 1,
+   "explanation": "11:25 is before the 11:30 required time (early) and 11:35 is after it (late). In this three-sided market the platform sets the required time, manages the order flow and assigns orders to drivers.",
+   "why_wrong": [
+    "There is no 10-minute grace window; 11:35 is past the required time.",
+    "",
+    "The times are the other way round: A arrives before 11:30, B after.",
+    "11:25 is before 11:30, so A is not late."
+   ],
+   "source": "slides07 · slide 20 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T7-V2",
+   "topic": "T7",
+   "difficulty": "E",
+   "priority": "nice",
+   "kind": "recall",
+   "q": "Prof Lim's note on O2O (online-to-offline) says these platforms focus on '衣食住行' (yi shi zhu xing). What does this cover?",
+   "options": [
+    "Luxury goods, travel, entertainment and finance",
+    "Electronics, books, music and games",
+    "Search, social media, payment and cloud",
+    "Basic daily needs: clothing, food, housing and transport"
+   ],
+   "answer": 3,
+   "explanation": "衣 clothing, 食 food, 住 housing, 行 transport: the basic daily needs. O2O turns online actions into offline services for these needs, such as meals, home services and rides.",
+   "why_wrong": [
+    "These are not the basic needs named by 衣食住行.",
+    "These are products, mostly sold as pure e-commerce, not O2O daily needs.",
+    "These are tech services, not the four basic needs.",
+    ""
+   ],
+   "source": "slides07 · slide 23 (class note)",
+   "visual": true
+  },
+  {
+   "id": "T7-V3",
+   "topic": "T7",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Picture 2 in Prof Lim's '5 solutions' slides shows an autonomous delivery vehicle. Which last-mile challenge does it mainly address, and what limits its use?",
+   "options": [
+    "Staff turnover and inconsistent service; its use depends on roads and regulation",
+    "Customers not being home; its use depends on locker space",
+    "Long gaps between drops in sparse areas; its use depends on flight range",
+    "It removes the last mile entirely; its use depends on store opening hours"
+   ],
+   "answer": 0,
+   "explanation": "Autonomous vehicles replace drivers, so they fix staff turnover and give consistent service. The slide notes their use depends on roads and regulation.",
+   "why_wrong": [
+    "",
+    "'Customer not home' is fixed by pick-up stations (lockers).",
+    "Sparse areas with long gaps are the case for drones.",
+    "Removing the last mile is buy-online-pick-up-in-store (BOPIS)."
+   ],
+   "source": "slides07 · slide 11 (photo)",
+   "visual": true
+  },
+  {
+   "id": "T7-V4",
+   "topic": "T7",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Picture 5 in the '5 solutions' slides shows Grab and foodpanda riders. Which statement best describes this 'Uberization' solution?",
+   "options": [
+    "The platform hires a full-time fleet so that service quality stays the same",
+    "Customers collect parcels from lockers, so no rider is needed",
+    "Part-timers such as students and retirees deliver, giving flexible capacity at peaks at a variable cost",
+    "Robots replace riders on simple routes in dense campuses"
+   ],
+   "answer": 2,
+   "explanation": "Uberization uses gig workers (part-timers, students, retirees). Capacity grows and shrinks with demand, so it handles peaks and is a variable, not fixed, cost.",
+   "why_wrong": [
+    "A full-time own fleet is the 'go heavy' opposite of gig work.",
+    "Lockers are the pick-up station solution.",
+    "",
+    "Robots in dense, simple zones are a different solution from human gig riders."
+   ],
+   "source": "slides07 · slide 13 (photo)",
+   "visual": true
   },
   {
    "id": "T8-01",
@@ -2799,6 +3471,102 @@
    "topic": "T8"
   },
   {
+   "id": "T8-V1",
+   "topic": "T8",
+   "difficulty": "E",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's slide shows two pictures. In picture 1, value flows one way: producer → firm → consumer. In picture 2, the firm sits in the middle while outside producers and consumers create value with each other. Which statement is correct?",
+   "options": [
+    "Picture 1 is a platform, because the firm controls the whole flow",
+    "Picture 2 is a pipe, because value passes through the firm",
+    "Both are platforms; picture 2 simply has more users",
+    "Picture 2 is a platform: its role is enabling value-creating interactions between external producers and consumers"
+   ],
+   "answer": 3,
+   "explanation": "A pipe makes and pushes value in one direction (picture 1). A platform orchestrates a network: its role is enabling value-creating interactions between external producers and consumers (picture 2).",
+   "why_wrong": [
+    "One-way flow controlled by the firm is a pipe, not a platform.",
+    "In picture 2 value is created between outside users, which is a platform.",
+    "Picture 1 is a pipe; the difference is the direction of value, not user numbers.",
+    ""
+   ],
+   "source": "slides08 · slide 17 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T8-V2",
+   "topic": "T8",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "calc",
+   "q": "Prof Lim's one-sided network picture shows 2 phones = 1 link, 5 phones = 10 links and 12 phones = 66 links. Using the same rule, how many links do 8 phones make?",
+   "options": [
+    "16",
+    "28",
+    "56",
+    "64"
+   ],
+   "answer": 1,
+   "explanation": "Links = n(n − 1)/2. Check: 5 × 4/2 = 10 and 12 × 11/2 = 66. For 8 phones: 8 × 7/2 = 28.",
+   "why_wrong": [
+    "16 is 2 × 8; links grow faster than the number of phones.",
+    "",
+    "56 is n(n − 1) without dividing by 2, so each link is counted twice.",
+    "64 is n², which counts self-links and double-counts each link."
+   ],
+   "source": "slides08 · slide 19 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T8-V3",
+   "topic": "T8",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Prof Lim's YouTube diagram has arrows between viewers and creators, plus arrows within the viewer side. A viewer shares a video with friends who are also viewers, and they all enjoy the platform more. Which effect is this?",
+   "options": [
+    "A positive same-side effect",
+    "A positive cross-side effect",
+    "A negative same-side effect",
+    "A negative cross-side effect"
+   ],
+   "answer": 0,
+   "explanation": "Viewers gaining from other viewers is a same-side effect, and it is positive because they enjoy the platform more. Cross-side would be viewers gaining from more creators (or creators from more viewers).",
+   "why_wrong": [
+    "",
+    "Cross-side links two DIFFERENT groups (viewers ↔ creators); here both are viewers.",
+    "Negative same-side is like eBay sellers competing; here viewers benefit.",
+    "No other group is involved, and the effect is a gain, not a loss."
+   ],
+   "source": "slides08 · slide 40 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T8-V4",
+   "topic": "T8",
+   "difficulty": "M",
+   "priority": "must",
+   "kind": "apply",
+   "q": "Prof Lim's stability chart for p* = z(1 − z) has arrows: below z′ they point left toward 0; between z′ and z″ they point right toward z″; above z″ they point left back to z″. What do the arrows tell you?",
+   "options": [
+    "z′ and z″ are both stable, and 0 is unstable",
+    "z′ is stable, z″ is unstable, and 0 is never reached",
+    "0 and z″ are stable; z′ is unstable, the tipping point the firm must get past",
+    "Only z′ is an equilibrium; 0 and z″ are just ends of the curve"
+   ],
+   "answer": 2,
+   "explanation": "Arrows point AWAY from z′ (left to 0, right to z″), so z′ is unstable: the tipping point or critical mass. Arrows point TOWARD 0 and z″, so both are stable.",
+   "why_wrong": [
+    "Arrows move away from z′, so it cannot be stable; 0 attracts the market from below z′.",
+    "It is the reverse: z″ attracts the market, z′ repels it, and 0 is reached from below z′.",
+    "",
+    "0, z′ and z″ are all equilibria where p* = r(z)f(z)."
+   ],
+   "source": "slides08 · slide 34 (figure)",
+   "visual": true
+  },
+  {
    "id": "T9-01",
    "difficulty": "E",
    "priority": "must",
@@ -3142,6 +3910,102 @@
    ],
    "source": "Rigby (2011) The Future of Shopping",
    "topic": "T9"
+  },
+  {
+   "id": "T9-V1",
+   "topic": "T9",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Discussion (slide 4): a store is out of a book, so staff use an in-store kiosk to order it shipped to the shopper's home. In the information-fulfilment matrix, where does this sit?",
+   "options": [
+    "Q3: offline information (in the store) with home delivery",
+    "Q2: online information with in-store pickup (BOPIS)",
+    "Q1: traditional B&M, learn in store and carry home",
+    "Q4: pure-play e-commerce, learn online and delivered home"
+   ],
+   "answer": 0,
+   "explanation": "The shopper learns about the product in the store (offline information) and gets it delivered home, so it is Q3, offline-and-online. It uses an online system with an offline trigger, which is why the course says the line between channels has blurred.",
+   "why_wrong": [
+    "",
+    "There is no online research and no store pickup here.",
+    "The shopper does not carry the item home; it is delivered.",
+    "The shopper learned about the item in a store, not online."
+   ],
+   "source": "slides09 · slide 4 (discussion question)",
+   "visual": true
+  },
+  {
+   "id": "T9-V2",
+   "topic": "T9",
+   "difficulty": "M",
+   "priority": "should",
+   "kind": "apply",
+   "q": "Prof Lim's photos show SF Express stores in China: almost no stock, shoppers scan QR codes and goods are delivered home. Which statement matches the class discussion?",
+   "options": [
+    "A Q2 store; a retailer moving into logistics to cut last-mile cost",
+    "A Q1 store; SF is copying traditional supermarkets to fill its trucks",
+    "A Q3 store; a logistics firm moving into retail to fill its network, own customer data and avoid being squeezed by JD and Cainiao",
+    "A Q4 store; SF is turning into a pure-play website with a showroom"
+   ],
+   "answer": 2,
+   "explanation": "Shoppers see goods offline and get them delivered, so it is Q3. SF is a logistics firm moving into retail: more volume through its own network, owning the customer and data, stores as parcel points, and protection as JD and Alibaba's Cainiao build their own logistics.",
+   "why_wrong": [
+    "There is no in-store pickup of online orders, and SF is a logistics firm, not a retailer.",
+    "Shoppers do not carry goods home; items are delivered (not Q1).",
+    "",
+    "Q4 has no store at all; SF is adding physical stores."
+   ],
+   "source": "slides09 · slide 28 (photos + class discussion)",
+   "visual": true
+  },
+  {
+   "id": "T9-V3",
+   "topic": "T9",
+   "difficulty": "E",
+   "priority": "should",
+   "kind": "recall",
+   "q": "Prof Lim's 'grand integration' figure shows six circles of industries merging in the internet economy (e.g. Alibaba, Amazon, JD). Which of these is NOT one of the six?",
+   "options": [
+    "Cloud computing",
+    "E-payment",
+    "AI and autonomous technology",
+    "Contract manufacturing"
+   ],
+   "answer": 3,
+   "explanation": "The six are e-commerce, logistics, B&M retail, cloud, e-payment and AI/autonomous tech. Manufacturing is not one of them. (Class note: AWS cloud earns most of Amazon's profit, but Amazon keeps retail for its customer data.)",
+   "why_wrong": [
+    "Cloud is one of the six (e.g. AWS).",
+    "E-payment is one of the six (e.g. Alipay, WeChat Pay).",
+    "AI/autonomous technology is one of the six.",
+    ""
+   ],
+   "source": "slides09 · slide 32 (figure)",
+   "visual": true
+  },
+  {
+   "id": "T9-V4",
+   "topic": "T9",
+   "difficulty": "E",
+   "priority": "nice",
+   "kind": "recall",
+   "q": "Prof Lim's course overview groups the topics by the outcome they target. Which topics sit under 'Cost ↓'?",
+   "options": [
+    "Online retailing, marketplaces, and analytics & AI",
+    "Supply chain, order fulfilment, and last-mile delivery",
+    "Service platforms and omnichannel",
+    "Analytics & AI, service platforms, and last-mile delivery"
+   ],
+   "answer": 1,
+   "explanation": "The overview groups topics as: revenue ↑ (online retailing, marketplaces, analytics & AI), cost ↓ (supply chain, order fulfilment, last mile) and service level ↑ (platforms, omnichannel).",
+   "why_wrong": [
+    "These are the 'Revenue ↑' topics.",
+    "",
+    "These are the 'Service level ↑' topics.",
+    "This mixes one topic from each group."
+   ],
+   "source": "slides09 · slide 37 (figure)",
+   "visual": true
   }
  ],
  "saq": [
@@ -3155,7 +4019,7 @@
     "Attractive cash conversion cycle: high inventory turns mean Amazon is paid 19 days before it pays suppliers (−19 days vs +78 for a typical book retailer).",
     "Demand data, not just sales data: click-stream shows what customers view together, which supports personalised assortment, promotions and prices.",
     "Flexible fulfilment: any FC can serve any zone, improving service (though outbound cost can rise).",
-    "Disadvantages: fulfilment cost (manual picking, the most costly step, plus last mile); technology cost, which is largely fixed so scale matters; more exposed to seasonal peaks because orders are picked after they arrive (like make-to-order).",
+    "Disadvantages: fulfilment cost (manual picking, the most costly step, plus last mile); technology cost, which never stops (class answer: a VARIABLE cost, because it grows with suppliers, updates and security); more exposed to seasonal peaks because orders are picked after they arrive (like make-to-order).",
     "Biggest: fulfilment + shipping cost, because going online moves the cost from stores into picking and delivering every single order. This is why the rest of the course (supply chain, equipment, picking, last mile) focuses on cutting it."
    ],
    "marking": [
@@ -4087,6 +4951,533 @@
    ],
    "source": "Rigby (2011) The Future of Shopping",
    "topic": "T9"
+  }
+ ],
+ "title": "OPIM639 Exam Prep Quiz",
+ "exam": {
+  "date": "2026-11-10T13:00:00+08:00",
+  "label": "Final exam · Tue 10 Nov 2026, 1 pm · 2 hrs · closed book (one A4 sheet + calculator)"
+ },
+ "traps": {
+  "T1": [
+   "Online retailers hold LESS inventory (pooled in a few DCs), not zero.",
+   "Online is MORE exposed to seasonal peaks: it works like make-to-order and cannot pre-pack.",
+   "Tech cost: class answer is VARIABLE. It never stops (suppliers, updates, tracking, security).",
+   "Cash cycle: Amazon −19 days vs book retailer +78 days. Know which way round."
+  ],
+  "T2": [
+   "In the Stackelberg game the RETAILER leads (sets r and s); sellers follow.",
+   "Storage fee s is per unit of VOLUME. s = 0 if manufacturing costs are similar; s > 0 if very different.",
+   "Bigger capacity V can help BOTH retailer and sellers (win-win).",
+   "SoA: seller ships. FBA: Amazon ships. The operator prefers FBA (data, brand, lock-in)."
+  ],
+  "T3": [
+   "Regression finds a and b; OPTIMISATION finds the price X.",
+   "Unconstrained best 58.12 ≠ answer 112.5: the 50% margin floor binds.",
+   "Lecture margin is on COST: (X − 75)/75 ≥ 0.5.",
+   "Lost sales are MISSING data (censored demand), not derived data."
+  ],
+  "T4": [
+   "Replenish + allocate = PUSH (before demand). Fulfil = PULL (after demand).",
+   "Online HAS fulfilment flexibility; B&M usually does not.",
+   "Drop-shipping is 'FC J+1' and keeps the JRAF model always feasible.",
+   "Bottlenecks are order-picking and the last mile."
+  ],
+  "T5": [
+   "Pallet FLOW racks are for CASES, not pallets.",
+   "Bin-shelving = SLOW movers. Gravity flow = FAST movers.",
+   "Turret trucks = very narrow aisles (5–7 ft). Order-picker trucks = cases.",
+   "AS/RS can handle pallets OR pieces (bins). Boston Dynamics robots = cases."
+  ],
+  "T6": [
+   "Order workers slowest → FASTEST along the flow.",
+   "Throughput = SUM of speeds, not average or minimum.",
+   "Model assumes instant walk-back and NO passing.",
+   "S-shape skips EMPTY aisles only; combined heuristic ≈ 5% off optimal."
+  ],
+  "T7": [
+   "VRP depot = sortation centre, not the fulfilment centre.",
+   "Drones suit SPARSE, low-density areas.",
+   "'Go heavy' = China (Meituan, Tujia, Didi). 'Go light' = US.",
+   "Webvan failed from lack of DENSITY, not lack of customers."
+  ],
+  "T8": [
+   "z′ is UNSTABLE (tipping point); z″ is STABLE; z = 0 is always an equilibrium.",
+   "Lower price → z′ moves LEFT and z″ moves RIGHT.",
+   "Same-side effects can be NEGATIVE (more sellers compete).",
+   "Solve z(1 − z) = p with z = [1 ± √(1 − 4p)]/2."
+  ],
+  "T9": [
+   "Showrooming = try in store, buy online → Q3.",
+   "BOPIS = buy online, pick up in store → Q2.",
+   "Matrix axes = INFORMATION (offline/online) × FULFILMENT (pickup/delivery).",
+   "Omnichannel (integrated, seamless) ≠ multichannel (separate silos)."
+  ]
+ },
+ "tips": [
+  "Write the 3 formulas on your A4 sheet first: price X⁰ = −a/2b, bucket brigade TH = Σv, network z = [1 ± √(1−4p)]/2.",
+  "For 'which is better?' questions, start with 'It depends on…' and give the condition for each side.",
+  "Short answers: define → mechanism → course example → trade-off. That structure earns marks.",
+  "Read every option before choosing. Many distractors are 'right idea, wrong direction'.",
+  "In calculations, write the formula, the numbers and one business sentence of meaning.",
+  "Link topics for top marks: push/pull, own vs don't own assets, forecast → optimise.",
+  "Spend about 1 minute per MCQ. Flag and move on if stuck, then come back.",
+  "Use real course examples: Amazon, B&N, Flashion, Instacart, RedMart, Meituan, SideCar, Homejoy, Tesco, SF Express."
+ ],
+ "cheers": {
+  "right": [
+   "Nailed it! 🎯",
+   "Spot on! ✨",
+   "Exactly right! 🚀",
+   "You know this! 💪",
+   "Brilliant! 🌟",
+   "A+ thinking! 🏆"
+  ],
+  "wrong": [
+   "Good try. This one is now on your revise list. 📌",
+   "Almost! Read the explanation; you'll get it next time. 💡",
+   "Mistakes now = marks saved on 10 Nov. 🙌",
+   "That's a classic trap. Now you know it! 🧠"
+  ],
+  "end": [
+   "Every question you practise is a mark you are more likely to keep.",
+   "Steady progress beats cramming. Keep going!",
+   "You're building exam muscle. One more set?",
+   "Prof Lim would be proud. Rest, then retry your wrong ones."
+  ]
+ },
+ "cards": [
+  {
+   "id": "C01",
+   "topic": "T1",
+   "front": "Biggest disadvantage of online retailing?",
+   "back": "Fulfilment + shipping cost: picking each order (~55% of warehouse cost) and delivering to every door."
+  },
+  {
+   "id": "C02",
+   "topic": "T1",
+   "front": "Amazon vs typical book retailer cash conversion cycle",
+   "back": "Amazon −19 days (paid by customers 19 days before paying suppliers) vs +78 days."
+  },
+  {
+   "id": "C03",
+   "topic": "T1",
+   "front": "Is tech cost fixed or variable? (class answer)",
+   "back": "VARIABLE: it never stops (link more suppliers, update prices/shipping, tracking, new security)."
+  },
+  {
+   "id": "C04",
+   "topic": "T1",
+   "front": "Why is online more exposed to seasonal peaks?",
+   "back": "It works like make-to-order: orders are picked after they arrive, so you cannot pre-pack."
+  },
+  {
+   "id": "C05",
+   "topic": "T1",
+   "front": "Amazon's early model in one phrase",
+   "back": "'Sell all, carry few': ~2,000 titles stocked of 1M+ listed (1995); the rest drop-shipped or ordered from Ingram."
+  },
+  {
+   "id": "C06",
+   "topic": "T1",
+   "front": "Problems from diversifying beyond books",
+   "back": "Extra back-end investment, lower margins, different inventory turns, different packing equipment, more inventory."
+  },
+  {
+   "id": "C07",
+   "topic": "T1",
+   "front": "Demand data vs sales data",
+   "back": "Click-stream shows what customers LOOK at (demand), not only what they buy (sales)."
+  },
+  {
+   "id": "C08",
+   "topic": "T1",
+   "front": "Online vs B&M return rates (case)",
+   "back": "Online 1–2%; B&M 10–15× higher."
+  },
+  {
+   "id": "C09",
+   "topic": "T2",
+   "front": "3 reasons a retailer runs a marketplace",
+   "back": "1 One-stop shop without owning all stock (long tail) · 2 Test new products · 3 Use marketplace data."
+  },
+  {
+   "id": "C10",
+   "topic": "T2",
+   "front": "SoA vs FBA: who ships?",
+   "back": "SoA: the SELLER stores and ships. FBA: seller sends stock to Amazon first; AMAZON picks, packs, ships and serves."
+  },
+  {
+   "id": "C11",
+   "topic": "T2",
+   "front": "Why the operator prefers FBA (3)",
+   "back": "Owns all the data · protects its brand · sellers locked in. 'Firms that control logistics win.'"
+  },
+  {
+   "id": "C12",
+   "topic": "T2",
+   "front": "Why consignment + revenue sharing? (3)",
+   "back": "No overstock risk for the operator · no per-seller negotiation · revenue split is automatic online."
+  },
+  {
+   "id": "C13",
+   "topic": "T2",
+   "front": "Stackelberg game: who leads?",
+   "back": "The RETAILER leads (sets r and s); manufacturers follow (set p and q). Solve backwards."
+  },
+  {
+   "id": "C14",
+   "topic": "T2",
+   "front": "When should storage fee s > 0?",
+   "back": "When manufacturing costs differ a lot (diapers vs diamonds). Similar costs → s = 0 is enough."
+  },
+  {
+   "id": "C15",
+   "topic": "T2",
+   "front": "Does expanding capacity V hurt sellers?",
+   "back": "No: it can benefit BOTH retailer and manufacturers (with a saturation point)."
+  },
+  {
+   "id": "C16",
+   "topic": "T2",
+   "front": "5 seller advantages of a marketplace",
+   "back": "Traffic · reputation · risk control · cheaper & quicker start · international access."
+  },
+  {
+   "id": "C17",
+   "topic": "T3",
+   "front": "Flash-sale market shares (2015)",
+   "back": "Zulily 39% · Gilt 18% · Rue La La 14%. Pioneer: Vente Privée, France, 2001."
+  },
+  {
+   "id": "C18",
+   "topic": "T3",
+   "front": "Main flash-sale challenge",
+   "back": "Predict demand and set price for FIRST-EXPOSURE styles (~50% sell out; ~15% sell < 25%)."
+  },
+  {
+   "id": "C19",
+   "topic": "T3",
+   "front": "Available / derived / missing data",
+   "back": "Available: price, MSRP, timing, competitor price, sales · Derived: discount, # styles, relative price, weekend · Missing: LOST SALES."
+  },
+  {
+   "id": "C20",
+   "topic": "T3",
+   "front": "Price optimisation steps",
+   "back": "Regression Y = a + bX → max X(a + bX) → apply constraints (cap, margin floor, price point)."
+  },
+  {
+   "id": "C21",
+   "topic": "T3",
+   "front": "Lecture price example answer",
+   "back": "X⁰ = 58.12 not allowed; margin (X−75)/75 ≥ 0.5 → X ≥ 112.5 → X* = 112.5 (margin floor binds)."
+  },
+  {
+   "id": "C22",
+   "topic": "T3",
+   "front": "Regression output in the example",
+   "back": "Y = 70.50719 − 0.60658X; R² ≈ 0.84 (price explains 84% of demand variation)."
+  },
+  {
+   "id": "C23",
+   "topic": "T3",
+   "front": "Rule-based vs neural network AI",
+   "back": "Rule-based: humans write if-then rules; breaks with complexity. Neural nets: learn from labelled data; need data + compute."
+  },
+  {
+   "id": "C24",
+   "topic": "T3",
+   "front": "'AI is the electricity…'",
+   "back": "…data is the oil. Average engineers + lots of data beat experts + little data."
+  },
+  {
+   "id": "C25",
+   "topic": "T4",
+   "front": "Offline vs online fulfilment",
+   "back": "Offline: few, large orders; no flexibility. Online: many, small orders; fulfilment flexibility."
+  },
+  {
+   "id": "C26",
+   "topic": "T4",
+   "front": "3 aggregate supply-chain decisions",
+   "back": "① Replenish (when/how much) ② Allocate (how much per warehouse) ③ Fulfil (which warehouse)."
+  },
+  {
+   "id": "C27",
+   "topic": "T4",
+   "front": "Push vs pull",
+   "back": "PUSH (anticipative) = replenish + allocate before demand. PULL (reactive) = fulfil after demand."
+  },
+  {
+   "id": "C28",
+   "topic": "T4",
+   "front": "JRAF cost terms (4)",
+   "back": "Production (setup + variable) + holding + allocation + fulfilment."
+  },
+  {
+   "id": "C29",
+   "topic": "T4",
+   "front": "JRAF constraints (5)",
+   "back": "Supplier capacity · all received allocated · warehouse capacity · demand met (no backlog) · flow balance."
+  },
+  {
+   "id": "C30",
+   "topic": "T4",
+   "front": "What is 'FC J+1'?",
+   "back": "Drop-shipping channel: expensive, but keeps the model always feasible."
+  },
+  {
+   "id": "C31",
+   "topic": "T4",
+   "front": "Cainiao (Alibaba) numbers",
+   "back": "$16B · 1,800 DCs · 97,000 delivery stations · 600+ cities."
+  },
+  {
+   "id": "C32",
+   "topic": "T4",
+   "front": "Supply chain of an online retailer",
+   "back": "Suppliers → regional warehouses (FCs) → local sortation centres → consumers."
+  },
+  {
+   "id": "C33",
+   "topic": "T5",
+   "front": "Share of warehouse cost from order-picking",
+   "back": "~55%; within picking, TRAVEL takes the most time."
+  },
+  {
+   "id": "C34",
+   "topic": "T5",
+   "front": "Pallet storage + handling",
+   "back": "Single-deep (selective) racks · counterbalance lift truck, turret truck (5–7 ft aisles), AS/RS, conveyor."
+  },
+  {
+   "id": "C35",
+   "topic": "T5",
+   "front": "Case storage + handling",
+   "back": "Pallet FLOW racks (restock from another aisle) · order-picker truck, AS/RS, conveyor, Boston Dynamics robots."
+  },
+  {
+   "id": "C36",
+   "topic": "T5",
+   "front": "Piece storage",
+   "back": "Bin-shelving → SLOW movers (pick & restock same face) · Gravity flow racks → FAST movers (restock from back)."
+  },
+  {
+   "id": "C37",
+   "topic": "T5",
+   "front": "Piece handling robots",
+   "back": "Kiva (lifts shelf pods; QR codes on floor) · AutoStore (robots on a cube grid fetch bins) · AS/RS (bins)."
+  },
+  {
+   "id": "C38",
+   "topic": "T5",
+   "front": "Why is piece demand hardest?",
+   "back": "Every unit touched · poor fit for machines · erratic demand · many SKUs · costly parcels/returns."
+  },
+  {
+   "id": "C39",
+   "topic": "T5",
+   "front": "Problem with conveyors",
+   "back": "They split the warehouse into zones → workload imbalance; sortation conveyors are expensive."
+  },
+  {
+   "id": "C40",
+   "topic": "T5",
+   "front": "Turret truck",
+   "back": "Turret turns 90°; truck need not turn in aisle → very narrow aisles (5–7 ft)."
+  },
+  {
+   "id": "C41",
+   "topic": "T6",
+   "front": "Fast-pick area",
+   "back": "'Warehouse within a warehouse' near shipping; restocked from reserve; cuts response time."
+  },
+  {
+   "id": "C42",
+   "topic": "T6",
+   "front": "Bucket brigade rule",
+   "back": "Carry job forward until taken over (or end); walk back and take over the job behind you (or start a new one)."
+  },
+  {
+   "id": "C43",
+   "topic": "T6",
+   "front": "Bucket brigade ordering",
+   "back": "Slowest → FASTEST along the flow → self-balancing."
+  },
+  {
+   "id": "C44",
+   "topic": "T6",
+   "front": "Bucket brigade formulas",
+   "back": "Worker i: [(v₁+…+vᵢ₋₁)/Σv, (v₁+…+vᵢ)/Σv] · TH = Σv."
+  },
+  {
+   "id": "C45",
+   "topic": "T6",
+   "front": "Bucket brigade model assumptions (4)",
+   "back": "Work content 1 spread evenly · constant speeds · instant walk-back · no passing."
+  },
+  {
+   "id": "C46",
+   "topic": "T6",
+   "front": "5 advantages of bucket brigades",
+   "back": "Pure pull (WIP control) · no special equipment · self-balancing · teamwork · simple identical rule."
+  },
+  {
+   "id": "C47",
+   "topic": "T6",
+   "front": "Buffer variant vs circling variant",
+   "back": "Buffer: conditional YES (random blocking). Circling: doubtful (breaks slowest→fastest; only for loop layouts)."
+  },
+  {
+   "id": "C48",
+   "topic": "T6",
+   "front": "5 routing heuristics",
+   "back": "S-shape · return · mid-point · largest gap · combined (dynamic programming, ~5% off optimal)."
+  },
+  {
+   "id": "C49",
+   "topic": "T7",
+   "front": "VRP definition",
+   "back": "Fleet routes that start & end at the depot (= sortation centre), visit each customer once, minimum cost. VRPTW adds time windows."
+  },
+  {
+   "id": "C50",
+   "topic": "T7",
+   "front": "7 last-mile challenges",
+   "back": "No maps · complex areas · hidden time (park, lift, door) · customer not home · weather/traffic · dynamic routing · staff turnover."
+  },
+  {
+   "id": "C51",
+   "topic": "T7",
+   "front": "5 last-mile solutions",
+   "back": "Pick-up stations · autonomous vehicles · drones (sparse areas) · BOPIS · Uberization."
+  },
+  {
+   "id": "C52",
+   "topic": "T7",
+   "front": "Go light vs go heavy",
+   "back": "US go light (Yelp, Airbnb, Uber: info only). China go heavy (Meituan riders, Tujia cleaning, Didi gas stations)."
+  },
+  {
+   "id": "C53",
+   "topic": "T7",
+   "front": "O2O",
+   "back": "Online-to-offline: turning online actions into offline services (meals, parcels, haircuts, hospital queues)."
+  },
+  {
+   "id": "C54",
+   "topic": "T7",
+   "front": "Meal delivery: who does what?",
+   "back": "3-sided: customers order · restaurants cook & share revenue · drivers deliver. Platform sets required time, assigns orders."
+  },
+  {
+   "id": "C55",
+   "topic": "T7",
+   "front": "Why Webvan failed",
+   "back": "Huge fixed DCs (350k sq ft, ~$35M) without enough customer DENSITY."
+  },
+  {
+   "id": "C56",
+   "topic": "T7",
+   "front": "Instacart vs RedMart",
+   "back": "Instacart: asset-light, gig shoppers in stores. RedMart: owns stock, warehouse, fleet; wave picking 6 orders (+50%)."
+  },
+  {
+   "id": "C57",
+   "topic": "T8",
+   "front": "Platform definition",
+   "back": "Enables value-creating interactions between external producers and consumers."
+  },
+  {
+   "id": "C58",
+   "topic": "T8",
+   "front": "Externality",
+   "back": "Your welfare changes due to others, with no compensation. Positive: friend joins. Negative: congestion."
+  },
+  {
+   "id": "C59",
+   "topic": "T8",
+   "front": "One-sided link count",
+   "back": "n(n − 1)/2: 2 phones = 1, 5 = 10, 12 = 66."
+  },
+  {
+   "id": "C60",
+   "topic": "T8",
+   "front": "Network effect equilibrium condition",
+   "back": "p* = r(z)·f(z); f(0) = 0 so z = 0 is always an equilibrium."
+  },
+  {
+   "id": "C61",
+   "topic": "T8",
+   "front": "z(1 − z) peak",
+   "back": "1/4 at z = 1/2. Roots: z = [1 ± √(1 − 4p)]/2 (p 0.16 → 0.2, 0.8)."
+  },
+  {
+   "id": "C62",
+   "topic": "T8",
+   "front": "Stability",
+   "back": "z′ (small root) UNSTABLE tipping point · z″ STABLE · 0 stable."
+  },
+  {
+   "id": "C63",
+   "topic": "T8",
+   "front": "Effect of lowering price",
+   "back": "z′ moves LEFT (easier to reach) and z″ moves RIGHT (bigger market) → free trials, intro prices."
+  },
+  {
+   "id": "C64",
+   "topic": "T8",
+   "front": "Failures and 3 lessons",
+   "back": "SideCar (no critical mass) · Homejoy (25% cut, bypass) · lessons: network effect, know market, quality control."
+  },
+  {
+   "id": "C65",
+   "topic": "T9",
+   "front": "Omnichannel definition",
+   "back": "Integrated, seamless experience blending store advantages with information-rich online shopping (≠ multichannel silos)."
+  },
+  {
+   "id": "C66",
+   "topic": "T9",
+   "front": "Information-fulfilment matrix axes",
+   "back": "Information (offline/online) × fulfilment (pickup/delivery)."
+  },
+  {
+   "id": "C67",
+   "topic": "T9",
+   "front": "Q2 vs Q3",
+   "back": "Q2 online-and-offline: BOPIS, research online buy in store. Q3 offline-and-online: buy in store deliver home, showrooming."
+  },
+  {
+   "id": "C68",
+   "topic": "T9",
+   "front": "Which metric should retailers drop?",
+   "back": "Same-store sales; judge by ROIC and growth (Rigby)."
+  },
+  {
+   "id": "C69",
+   "topic": "T9",
+   "front": "Stores fight back (examples)",
+   "back": "Experience (Disney, Apple, Jordan's) · mobile coupons · local-stock apps · BOPIS · curated content (Nat Geo, THEMOIRe)."
+  },
+  {
+   "id": "C70",
+   "topic": "T9",
+   "front": "Tesco Homeplus virtual store",
+   "back": "Seoul subway QR store: 10k users in 3 months; online sales +130%."
+  },
+  {
+   "id": "C71",
+   "topic": "T9",
+   "front": "Grand integration (6)",
+   "back": "E-commerce · logistics · B&M retail · cloud · e-payment · AI/autonomous tech."
+  },
+  {
+   "id": "C72",
+   "topic": "T9",
+   "front": "Why SF Express opened stores",
+   "back": "Fill its network, avoid being squeezed by JD/Cainiao, own customer data, parcel points, use its brand (Q3)."
   }
  ]
 }
