@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1E2761">
+<title>OPIM639 Quiz</title>
+<style>
+:root{--bg:#F4F6FA;--card:#FFFFFF;--ink:#1F2430;--muted:#5B6170;--line:#DDE1E8;--brand:#1E2761;--accent:#2E5BBA;
+--ok:#1F8A70;--okbg:#E3F3EE;--bad:#B3261E;--badbg:#FCE8E6;--warnbg:#FFF4E0;--chip:#EEF1F8}
+@media (prefers-color-scheme:dark){:root{--bg:#12151C;--card:#1C212B;--ink:#E8EAF0;--muted:#A3A9B6;--line:#2E3442;--brand:#9DB4FF;--accent:#7FA2FF;
+--ok:#5CC9A7;--okbg:#173A31;--bad:#FF8A80;--badbg:#3E1F1D;--warnbg:#3A3020;--chip:#262C39}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+header{background:#1E2761;color:#fff;padding:14px 16px;position:sticky;top:0;z-index:5}
+header .row{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px}
+header h1{font-size:19px;margin:0;flex:1}
+header button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:10px;padding:8px 12px;font-size:15px}
+main{max-width:860px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+h2{font-size:18px;margin:0 0 10px}
+.muted{color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:15px;cursor:pointer;min-height:40px}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:0;border-radius:12px;padding:13px 18px;font-size:17px;font-weight:600;cursor:pointer;min-height:48px}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:var(--chip);color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.45}
+.row2{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.row2 .btn{flex:1 1 140px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:13px 14px;margin:9px 0;font-size:17px;cursor:pointer;min-height:52px}
+.opt b{display:inline-block;width:26px;color:var(--muted)}
+.opt.sel{border-color:var(--accent)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.why{font-size:15px;color:var(--muted);margin:4px 0 0 26px}
+.fb{border-radius:12px;padding:12px 14px;margin-top:12px}
+.fb.ok{background:var(--okbg)} .fb.no{background:var(--badbg)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tag{font-size:12.5px;border-radius:6px;padding:3px 8px;background:var(--chip);color:var(--muted)}
+.tag.must{background:var(--badbg);color:var(--bad)}
+.bar{height:8px;background:var(--chip);border-radius:99px;overflow:hidden;margin:6px 0 12px}
+.bar i{display:block;height:100%;background:var(--accent)}
+.qtext{font-size:18.5px;font-weight:600;margin:4px 0 6px}
+ul.tight{margin:6px 0 0 0;padding-left:22px} ul.tight li{margin:3px 0}
+.stat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.stat div{background:var(--chip);border-radius:12px;padding:10px 12px;font-size:14px}
+.stat b{display:block;font-size:20px}
+.big{font-size:44px;font-weight:800;color:var(--accent)}
+textarea{width:100%;min-height:110px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px;font:inherit}
+label.ck{display:flex;gap:10px;align-items:flex-start;margin:6px 0}
+label.ck input{width:22px;height:22px;margin-top:2px}
+.timer{font-variant-numeric:tabular-nums;font-weight:700}
+.rev{border-top:1px solid var(--line);padding:10px 0}
+select{font:inherit;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+@media (max-width:520px){body{font-size:16px}.qtext{font-size:17.5px}.opt{font-size:16px}}
+</style>
+</head>
+<body>
+<header><div class="row"><h1>OPIM639 Quiz</h1><span id="hdr" class="timer"></span><button id="homeBtn" hidden>Home</button></div></header>
+<main id="app"><div class="card">Loading questions…</div></main>
+<script>
+const $ = s => document.querySelector(s);
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("opim639_" + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem("opim639_" + k, JSON.stringify(v)); } catch (e) {} }
+};
+let QB = null, S = null, timerId = null;
+const L = ["A", "B", "C", "D"];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const prefs = Object.assign({ topics: null, type: "mcq", mode: "practice", random: false, shuffleOpts: false, must: false, diff: "all", examN: 20 }, store.get("prefs", {}));
+
+fetch("questions.json").then(r => r.json()).then(d => { QB = d; if (!prefs.topics) prefs.topics = d.topics.map(t => t.id); home(); })
+  .catch(() => { $("#app").innerHTML = '<div class="card"><h2>Could not load questions.json</h2><p class="muted">Open this app through Vercel (or any web server). Browsers block loading files directly from your disk.</p></div>'; });
+
+function topicName(id) { return (QB.topics.find(t => t.id === id) || {}).name || id; }
+function progress() { return store.get("progress", {}); } // id -> {seen, correct, last}
+function wrongIds() { const p = progress(); return Object.keys(p).filter(k => p[k].last === false); }
+
+function home() {
+  clearInterval(timerId); $("#hdr").textContent = ""; $("#homeBtn").hidden = true;
+  const p = progress();
+  const statHtml = QB.topics.map(t => {
+    const ids = QB.mcq.filter(q => q.topic === t.id).map(q => q.id);
+    const seen = ids.filter(i => p[i]).length, ok = ids.filter(i => p[i] && p[i].last).length;
+    return `<div><span class="muted">${t.id} ${esc(t.name)}</span><b>${ok}/${ids.length}</b><span class="muted">${seen} tried</span></div>`;
+  }).join("");
+  const nWrong = wrongIds().length;
+  $("#app").innerHTML = `
+  <div class="card"><h2>1 · Topics <span class="muted">(in course order)</span></h2>
+    <div class="chips" id="tchips">${QB.topics.map(t => `<button class="chip ${prefs.topics.includes(t.id) ? "on" : ""}" data-t="${t.id}">${t.id} ${esc(t.name)}</button>`).join("")}</div>
+    <div class="row2"><button class="btn ghost" id="allT">All topics</button><button class="btn ghost" id="noT">Clear</button></div></div>
+  <div class="card"><h2>2 · Question type</h2>
+    <div class="seg" id="types">${[["mcq", "MCQs (" + QB.mcq.length + ")"], ["saq", "Short questions (" + QB.saq.length + ")"]].map(([k, l]) => `<button class="chip ${prefs.type === k ? "on" : ""}" data-v="${k}">${l}</button>`).join("")}</div>
+    <div id="mcqopts" ${prefs.type === "saq" ? "hidden" : ""}>
+      <h2 style="margin-top:14px">3 · Mode</h2>
+      <div class="seg" id="modes">${[["practice", "Practice (instant feedback)"], ["exam", "Exam (timed, score at end)"]].map(([k, l]) => `<button class="chip ${prefs.mode === k ? "on" : ""}" data-v="${k}">${l}</button>`).join("")}</div>
+      <div id="examN" ${prefs.mode === "exam" ? "" : "hidden"} style="margin-top:10px">Questions: <select id="nsel">${[10, 20, 30, 45].map(n => `<option ${prefs.examN == n ? "selected" : ""}>${n}</option>`).join("")}</select> <span class="muted">· 72 s each</span></div>
+      <h2 style="margin-top:14px">4 · Filters</h2>
+      <div class="chips">
+        <button class="chip ${prefs.random ? "on" : ""}" id="rnd">🔀 Randomise questions</button>
+        <button class="chip ${prefs.shuffleOpts ? "on" : ""}" id="shf">Shuffle options</button>
+        <button class="chip ${prefs.must ? "on" : ""}" id="must">🔴 Must-know only</button>
+        <select id="diff">${[["all", "All levels"], ["E", "Easy"], ["M", "Medium"], ["H", "Hard"]].map(([k, l]) => `<option value="${k}" ${prefs.diff === k ? "selected" : ""}>${l}</option>`).join("")}</select>
+      </div>
+    </div>
+    <div class="row2"><button class="btn primary" id="go">Start</button>
+      <button class="btn ghost" id="retry" ${nWrong ? "" : "disabled"}>Retry my wrong answers (${nWrong})</button></div>
+    <p class="muted" id="count"></p></div>
+  <div class="card"><h2>Your progress <span class="muted">(saved on this device)</span></h2><div class="stat">${statHtml}</div>
+    <div class="row2"><button class="btn ghost" id="reset">Reset progress</button></div></div>`;
+  const save = () => { store.set("prefs", prefs); };
+  const recount = () => { const n = pool().length; $("#count").textContent = n + " questions match your choices."; $("#go").disabled = !n; };
+  document.querySelectorAll("#tchips .chip").forEach(b => b.onclick = () => { const t = b.dataset.t; prefs.topics = prefs.topics.includes(t) ? prefs.topics.filter(x => x !== t) : prefs.topics.concat(t).sort(); b.classList.toggle("on"); save(); recount(); });
+  $("#allT").onclick = () => { prefs.topics = QB.topics.map(t => t.id); save(); home(); };
+  $("#noT").onclick = () => { prefs.topics = []; save(); home(); };
+  document.querySelectorAll("#types .chip").forEach(b => b.onclick = () => { prefs.type = b.dataset.v; save(); home(); });
+  document.querySelectorAll("#modes .chip").forEach(b => b.onclick = () => { prefs.mode = b.dataset.v; save(); home(); });
+  if ($("#nsel")) $("#nsel").onchange = e => { prefs.examN = +e.target.value; save(); };
+  $("#rnd").onclick = () => { prefs.random = !prefs.random; save(); home(); };
+  $("#shf").onclick = () => { prefs.shuffleOpts = !prefs.shuffleOpts; save(); home(); };
+  $("#must").onclick = () => { prefs.must = !prefs.must; save(); home(); };
+  $("#diff").onchange = e => { prefs.diff = e.target.value; save(); recount(); };
+  $("#go").onclick = () => start(pool());
+  $("#retry").onclick = () => { const w = new Set(wrongIds()); prefs.type = "mcq"; start(QB.mcq.filter(q => w.has(q.id)), "practice"); };
+  $("#reset").onclick = () => { if (confirmReset()) { store.set("progress", {}); home(); } };
+  recount();
+}
+function confirmReset() { const b = $("#reset"); if (b.dataset.armed) return true; b.dataset.armed = 1; b.textContent = "Tap again to confirm reset"; return false; }
+
+function pool() {
+  const set = prefs.type === "saq" ? QB.saq : QB.mcq;
+  return set.filter(q => prefs.topics.includes(q.topic) && (!prefs.must || q.priority === "must") && (prefs.type === "saq" || prefs.diff === "all" || q.difficulty === prefs.diff));
+}
+
+function start(list, forceMode) {
+  let qs = prefs.random ? shuffle(list) : list.slice();
+  const mode = prefs.type === "saq" ? "saq" : (forceMode || prefs.mode);
+  if (mode === "exam") qs = shuffle(list).slice(0, prefs.examN);
+  qs = qs.map(q => { if (!q.options) return q; const order = prefs.shuffleOpts || mode === "exam" ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]; return Object.assign({}, q, { order }); });
+  S = { qs, i: 0, mode, ans: {}, startT: Date.now() };
+  $("#homeBtn").hidden = false; $("#homeBtn").onclick = home;
+  if (mode === "exam") { const end = Date.now() + qs.length * 72000; timerId = setInterval(() => { const s = Math.max(0, Math.round((end - Date.now()) / 1000)); $("#hdr").textContent = "⏱ " + Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); if (!s) finishExam(); }, 500); }
+  render();
+}
+
+function record(q, correct) { const p = progress(); const r = p[q.id] || { seen: 0, correct: 0 }; r.seen++; if (correct) r.correct++; r.last = correct; p[q.id] = r; store.set("progress", p); }
+
+function metaTags(q) {
+  return `<div class="meta"><span class="tag">${q.topic} · ${esc(topicName(q.topic))}</span>${q.difficulty ? `<span class="tag">${{ E: "Easy", M: "Medium", H: "Hard" }[q.difficulty]}</span>` : ""}${q.kind ? `<span class="tag">${q.kind}</span>` : ""}${q.marks ? `<span class="tag">${q.marks} marks</span>` : ""}${q.priority === "must" ? '<span class="tag must">🔴 must know</span>' : ""}<span class="tag">${esc(q.id)}</span></div>`;
+}
+
+function render() {
+  const q = S.qs[S.i], n = S.qs.length;
+  const head = `<div class="muted">Question ${S.i + 1} of ${n}</div><div class="bar"><i style="width:${(S.i / n) * 100}%"></i></div>`;
+  if (S.mode === "saq") return renderSaq(q, head);
+  const chosen = S.ans[q.id];
+  const reveal = S.mode === "practice" && chosen !== undefined;
+  const opts = q.order.map((oi, k) => {
+    let cls = "opt"; if (chosen === oi) cls += " sel";
+    if (reveal) { if (oi === q.answer) cls += " right"; else if (oi === chosen) cls += " wrong"; }
+    const why = reveal && oi !== q.answer && q.why_wrong[oi] ? `<div class="why">✗ ${esc(q.why_wrong[oi])}</div>` : "";
+    return `<button class="${cls}" data-o="${oi}" ${reveal ? "disabled" : ""}><b>${L[k]}</b>${esc(q.options[oi])}${why}</button>`;
+  }).join("");
+  const ok = chosen === q.answer;
+  const fb = reveal ? `<div class="fb ${ok ? "ok" : "no"}"><b>${ok ? "✓ Correct." : "✗ Not quite. Answer: " + L[q.order.indexOf(q.answer)]}</b><div style="margin-top:6px">${esc(q.explanation)}</div><div class="muted" style="margin-top:6px">Source: ${esc(q.source || "")}</div></div>` : "";
+  const last = S.i === n - 1;
+  $("#app").innerHTML = `<div class="card">${head}${metaTags(q)}<div class="qtext">${esc(q.q)}</div>${opts}${fb}
+   <div class="row2"><button class="btn ghost" id="prev" ${S.i ? "" : "disabled"}>◀ Back</button>
+   ${S.mode === "exam" && last ? '<button class="btn primary" id="submit">Submit exam</button>' : `<button class="btn primary" id="next" ${S.mode === "practice" && !reveal ? "disabled" : ""}>${last ? "Finish" : "Next ▶"}</button>`}</div></div>`;
+  document.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    const oi = +b.dataset.o; if (S.mode === "practice" && S.ans[q.id] !== undefined) return;
+    S.ans[q.id] = oi; if (S.mode === "practice") record(q, oi === q.answer); render();
+  });
+  $("#prev").onclick = () => { S.i--; render(); window.scrollTo(0, 0); };
+  if ($("#next")) $("#next").onclick = () => { if (last) return S.mode === "exam" ? finishExam() : practiceDone(); S.i++; render(); window.scrollTo(0, 0); };
+  if ($("#submit")) $("#submit").onclick = finishExam;
+}
+
+function practiceDone() {
+  const n = S.qs.length, ok = S.qs.filter(q => S.ans[q.id] === q.answer).length;
+  $("#app").innerHTML = `<div class="card"><h2>Set complete</h2><div class="big">${ok} / ${n}</div><p class="muted">Wrong answers are saved. Use “Retry my wrong answers” on the home screen.</p><div class="row2"><button class="btn primary" id="h">Home</button></div></div>`;
+  $("#h").onclick = home;
+}
+
+function finishExam() {
+  clearInterval(timerId); $("#hdr").textContent = "";
+  const n = S.qs.length; let ok = 0;
+  S.qs.forEach(q => { const c = S.ans[q.id] === q.answer; if (c) ok++; record(q, c); });
+  const pct = Math.round(ok / n * 100), mins = Math.round((Date.now() - S.startT) / 60000);
+  const byT = {}; S.qs.forEach(q => { byT[q.topic] = byT[q.topic] || [0, 0]; byT[q.topic][1]++; if (S.ans[q.id] === q.answer) byT[q.topic][0]++; });
+  const weak = Object.entries(byT).filter(([, v]) => v[0] / v[1] < 0.7).map(([k]) => k + " " + topicName(k));
+  const rev = S.qs.map((q, i) => { const c = S.ans[q.id] === q.answer, a = S.ans[q.id];
+    return `<div class="rev"><div class="muted">${i + 1}. ${q.topic} · ${esc(q.id)} ${c ? "✓" : "✗"}</div><div><b>${esc(q.q)}</b></div>
+    <div>Your answer: ${a === undefined ? "<i>blank</i>" : esc(q.options[a])}</div>${c ? "" : `<div style="color:var(--ok)">Correct: ${esc(q.options[q.answer])}</div>`}
+    <div class="muted">${esc(q.explanation)}</div></div>`; }).join("");
+  $("#app").innerHTML = `<div class="card"><h2>Exam result</h2><div class="big">${pct}%</div><p>${ok} of ${n} correct · ${mins} min</p>
+   ${weak.length ? `<div class="fb no"><b>Revise next:</b> ${esc(weak.join(", "))}</div>` : '<div class="fb ok"><b>Strong across all topics in this set.</b></div>'}
+   <div class="row2"><button class="btn primary" id="h">Home</button></div></div><div class="card"><h2>Review</h2>${rev}</div>`;
+  $("#h").onclick = home;
+}
+
+function renderSaq(q, head) {
+  const n = S.qs.length, shown = S.ans[q.id] === "shown";
+  const draft = (store.get("drafts", {}))[q.id] || "";
+  $("#app").innerHTML = `<div class="card">${head}${metaTags(q)}<div class="qtext">${esc(q.q)}</div>
+   <textarea id="draft" placeholder="Write or think through your answer first (optional, saved on this device)…">${esc(draft)}</textarea>
+   ${shown ? `<div class="fb ok"><b>Model answer</b><ul class="tight">${q.model_answer.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+   <div class="fb" style="background:var(--warnbg)"><b>Mark yourself</b>${q.marking.map((m, k) => `<label class="ck"><input type="checkbox" data-k="${k}"><span>${esc(m)}</span></label>`).join("")}</div>
+   <div class="fb no"><b>Common mistakes</b><ul class="tight">${q.mistakes.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+   <p class="muted">Source: ${esc(q.source || "")}</p>` : ""}
+   <div class="row2"><button class="btn ghost" id="prev" ${S.i ? "" : "disabled"}>◀ Back</button>
+   ${shown ? `<button class="btn primary" id="next">${S.i === n - 1 ? "Finish" : "Next ▶"}</button>` : '<button class="btn primary" id="show">Show model answer</button>'}</div></div>`;
+  $("#draft").oninput = e => { const d = store.get("drafts", {}); d[q.id] = e.target.value; store.set("drafts", d); };
+  $("#prev").onclick = () => { S.i--; render(); window.scrollTo(0, 0); };
+  if ($("#show")) $("#show").onclick = () => { S.ans[q.id] = "shown"; render(); };
+  if ($("#next")) $("#next").onclick = () => { if (S.i === n - 1) return home(); S.i++; render(); window.scrollTo(0, 0); };
+}
+</script>
+</body>
+</html>
